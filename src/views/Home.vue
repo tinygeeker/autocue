@@ -10,7 +10,7 @@
             <el-input v-model="form.prompt" type="textarea" :rows="10" placeholder="Prompt" />
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" plain>复制</el-button>
+            <el-button type="primary" plain @click="copyPrompt" class="copyBtn">复制</el-button>
             <el-button type="warning" style="margin-left: .5rem;" plain @click="this.form.prompt=''">清空</el-button>
             <el-button type="danger" style="margin-left: .5rem;" plain v-if="setting.adult" @click="adultPrompt">成人默认</el-button>
           </el-form-item>
@@ -18,7 +18,7 @@
             <el-input v-model="form.negative_prompt" type="textarea" :rows="10" placeholder="Negative Prompt" />
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" plain>复制</el-button>
+            <el-button type="primary" plain @click="copyNegativePrompt" class="copyBtn">复制</el-button>
             <el-button style="margin-left: .5rem;" plain @click="this.form.negative_prompt=''">清空</el-button>
             <el-button style="margin-left: .5rem;" plain @click="this.form.negative_prompt=this.negative_prompt">默认</el-button>
           </el-form-item>
@@ -80,6 +80,9 @@
 </template>
 
 <script>
+import { ElMessage } from 'element-plus'
+import Clipboard from 'clipboard'
+
 import Basic from '../components/Basic.vue'
 import Environment from '../components/Environment.vue'
 import Style from '../components/Style.vue'
@@ -138,6 +141,44 @@ export default {
   methods: {
     adultPrompt: function() {
       this.form.prompt = this.adult_prompt
+    },
+    copyPrompt: function () {
+      let that = this
+      let clipboard = new Clipboard('.copyBtn', {
+        text: function () {
+          //返回要复制的文本
+          return that.form.prompt
+        }
+      })
+      clipboard.on('success', () => {
+        ElMessage.success('复制成功');
+        //释放内存
+        clipboard.destroy()
+      })
+      clipboard.on('error', () => {
+        ElMessage.error('复制失败');
+        //释放内存
+        clipboard.destroy()
+      })
+    },
+    copyNegativePrompt: function () {
+      let that = this
+      let clipboard = new Clipboard('.copyBtn', {
+        text: function () {
+          //返回要复制的文本
+          return that.form.negative_prompt
+        }
+      })
+      clipboard.on('success', () => {
+        ElMessage.success('复制成功');
+        //释放内存
+        clipboard.destroy()
+      })
+      clipboard.on('error', () => {
+        ElMessage.error('复制失败');
+        //释放内存
+        clipboard.destroy()
+      })
     }
   },
 }
