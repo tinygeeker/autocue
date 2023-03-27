@@ -6,43 +6,34 @@
     <el-row type="flex" justify="center" :gutter="20">
       <el-col :span="12">
         <el-form ref="form" :model="form" label-position="right" label-width="100px">
-          <el-form-item label="标签预览">
-            <el-input v-model="form.vprompt" type="textarea" :rows="5" placeholder="Prompt preview" />
-          </el-form-item>
           <el-form-item label="正向标签">
             <el-input v-model="form.prompt" type="textarea" :rows="5" placeholder="Prompt" />
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="submitForm('dynamicValidateForm')">复制</el-button>
-            <el-button @click="addDomain">清空</el-button>
+            <el-button type="primary">复制</el-button>
+            <el-button style="margin-left: .5rem;">清空</el-button>
           </el-form-item>
           <el-form-item label="反向标签">
             <el-input v-model="form.negative_prompt" type="textarea" :rows="5" placeholder="Negative Prompt" />
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="submitForm('dynamicValidateForm')">复制</el-button>
-            <el-button @click="addDomain">清空</el-button>
+            <el-button type="primary">复制</el-button>
+            <el-button style="margin-left: .5rem;">清空</el-button>
           </el-form-item>
         </el-form>
       </el-col>
       <el-col :span="12">
         <el-steps simple>
-          <el-switch v-model="setting.en" inactive-text="英文">
-          </el-switch>
-          <el-switch v-model="setting.zh" inactive-text="中文">
-          </el-switch>
-          <el-switch v-model="setting.down" inactive-text="降权">
-          </el-switch>
-          <el-switch v-model="setting.up" inactive-text="加权">
-          </el-switch>
-          <el-switch v-model="setting.del" inactive-text="删除">
-          </el-switch>
-          <el-switch v-model="setting.adult" inactive-text="成年">
-          </el-switch>
+          <el-switch v-model="setting.en" inactive-text="英文" disabled />
+          <el-switch v-model="setting.zh" inactive-text="中文" />
+          <el-switch v-model="setting.down" inactive-text="降权" />
+          <el-switch v-model="setting.up" inactive-text="加权" />
+          <el-switch v-model="setting.del" inactive-text="删除" />
+          <el-switch v-model="setting.adult" inactive-text="成年" />
         </el-steps>
         <el-tabs tabPosition="left" activeName="basic" style="background: var(--el-fill-color-light);">
           <el-tab-pane label="常用" name="basic">
-            <Basic msg="Welcome to Your Vue.js App" />
+            <Basic :setting="this.setting" />
           </el-tab-pane>
           <el-tab-pane label="环境" name="environment">配置管理</el-tab-pane>
           <el-tab-pane label="风格" name="style">角色管理</el-tab-pane>
@@ -98,11 +89,11 @@ export default {
     return {
       setting: {
         en: true,
-        zh: true,
-        down: true,
-        up: true,
-        del: true,
-        cut: true,
+        zh: false,
+        down: false,
+        up: false,
+        del: false,
+        cut: false,
         adult: false
       },
       form: {
