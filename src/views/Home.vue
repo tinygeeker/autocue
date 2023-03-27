@@ -7,18 +7,20 @@
       <el-col :span="12">
         <el-form ref="form" :model="form" label-position="right" label-width="100px">
           <el-form-item label="正向标签">
-            <el-input v-model="form.prompt" type="textarea" :rows="5" placeholder="Prompt" />
+            <el-input v-model="form.prompt" type="textarea" :rows="10" placeholder="Prompt" />
           </el-form-item>
           <el-form-item>
-            <el-button type="primary">复制</el-button>
-            <el-button style="margin-left: .5rem;">清空</el-button>
+            <el-button type="primary" plain>复制</el-button>
+            <el-button type="warning" style="margin-left: .5rem;" plain @click="this.form.prompt=''">清空</el-button>
+            <el-button type="danger" style="margin-left: .5rem;" plain v-if="setting.adult" @click="adultPrompt">成人默认</el-button>
           </el-form-item>
           <el-form-item label="反向标签">
-            <el-input v-model="form.negative_prompt" type="textarea" :rows="5" placeholder="Negative Prompt" />
+            <el-input v-model="form.negative_prompt" type="textarea" :rows="10" placeholder="Negative Prompt" />
           </el-form-item>
           <el-form-item>
-            <el-button type="primary">复制</el-button>
-            <el-button style="margin-left: .5rem;">清空</el-button>
+            <el-button type="primary" plain>复制</el-button>
+            <el-button style="margin-left: .5rem;" plain @click="this.form.negative_prompt=''">清空</el-button>
+            <el-button style="margin-left: .5rem;" plain @click="this.form.negative_prompt=this.negative_prompt">默认</el-button>
           </el-form-item>
         </el-form>
       </el-col>
@@ -35,18 +37,42 @@
           <el-tab-pane label="常用" name="basic">
             <Basic :setting="this.setting" />
           </el-tab-pane>
-          <el-tab-pane label="环境" name="environment">配置管理</el-tab-pane>
-          <el-tab-pane label="风格" name="style">角色管理</el-tab-pane>
-          <el-tab-pane label="人物" name="character">定时任务补偿</el-tab-pane>
-          <el-tab-pane label="头发" name="hair">定时任务补偿</el-tab-pane>
-          <el-tab-pane label="五官" name="features">定时任务补偿</el-tab-pane>
-          <el-tab-pane label="眼睛" name="eyes">定时任务补偿</el-tab-pane>
-          <el-tab-pane label="身体" name="body">定时任务补偿</el-tab-pane>
-          <el-tab-pane label="服装" name="clothing">定时任务补偿</el-tab-pane>
-          <el-tab-pane label="腿部" name="legs">定时任务补偿</el-tab-pane>
-          <el-tab-pane label="鞋子" name="shoe">定时任务补偿</el-tab-pane>
-          <el-tab-pane label="动作" name="action">定时任务补偿</el-tab-pane>
-          <el-tab-pane label="表情" name="emoji">定时任务补偿</el-tab-pane>
+          <el-tab-pane label="环境" name="environment">
+            <Environment :setting="this.setting" />
+          </el-tab-pane>
+          <el-tab-pane label="风格" name="style">
+            <Style :setting="this.setting" />
+          </el-tab-pane>
+          <el-tab-pane label="人物" name="character">
+            <Character :setting="this.setting" />
+          </el-tab-pane>
+          <el-tab-pane label="头发" name="hair">
+            <Hair :setting="this.setting" />
+          </el-tab-pane>
+          <el-tab-pane label="五官" name="features">
+            <Features :setting="this.setting" />
+          </el-tab-pane>
+          <el-tab-pane label="眼睛" name="eyes">
+            <Eyes :setting="this.setting" />
+          </el-tab-pane>
+          <el-tab-pane label="身体" name="body">
+            <Body :setting="this.setting" />
+          </el-tab-pane>
+          <el-tab-pane label="服装" name="clothing">
+            <Clothing :setting="this.setting" />
+          </el-tab-pane>
+          <el-tab-pane label="腿部" name="legs">
+            <Legs :setting="this.setting" />
+          </el-tab-pane>
+          <el-tab-pane label="鞋子" name="shoe">
+            <Shoe :setting="this.setting" />
+          </el-tab-pane>
+          <el-tab-pane label="动作" name="action">
+            <Action :setting="this.setting" />
+          </el-tab-pane>
+          <el-tab-pane label="表情" name="emoji">
+            <Emoji :setting="this.setting" />
+          </el-tab-pane>
         </el-tabs>
       </el-col>
     </el-row>
@@ -87,6 +113,9 @@ export default {
   },
   data() {
     return {
+      prompt: 'masterpiece, best quality, ',
+      negative_prompt: 'lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet,',
+      adult_prompt: 'masterpiece, best quality, surrounded, multiple others, exhibitionism, audience, background characters, crowd, public, humiliation, partially unbuttoned, realistic, photo, real, {{breasts out}}, {{large breasts}}, no bra, no_panties, undressing, skirt lift, shirt lift, small_nipples, leash,',
       setting: {
         en: true,
         zh: false,
@@ -97,11 +126,20 @@ export default {
         adult: false
       },
       form: {
-        prompt: 'masterpiece, best quality, ',
-        negative_prompt: 'lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet,'
+        prompt: '',
+        negative_prompt: ''
       }
     }
-  }
+  },
+  created () {
+    this.form.prompt = this.prompt;
+    this.form.negative_prompt = this.negative_prompt;
+  },
+  methods: {
+    adultPrompt: function() {
+      this.form.prompt = this.adult_prompt
+    }
+  },
 }
 </script>
 
