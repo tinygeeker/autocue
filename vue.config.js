@@ -2,5 +2,13 @@ const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   publicPath: "./",
   transpileDependencies: true,
-  lintOnSave: false
+  lintOnSave: false,
+  chainWebpack: config => {
+    config
+    .plugin('html')
+    .tap(args => {
+      args[0].title = '极客飞兔AI标签生成器'
+      return args
+    })
+  },
 })
