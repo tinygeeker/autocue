@@ -31,8 +31,8 @@
           <el-switch v-model="setting.zh" inactive-text="中文" />
           <el-switch v-model="setting.down" inactive-text="降权" />
           <el-switch v-model="setting.up" inactive-text="加权" />
-          <!-- <el-switch v-model="setting.del" inactive-text="删除" />
-          <el-switch v-model="setting.adult" inactive-text="成年" /> -->
+          <el-switch v-model="setting.del" inactive-text="删除" />
+          <el-switch v-model="setting.adult" inactive-text="成年" />
         </el-steps>
         <el-tabs tabPosition="left" activeName="basic" style="height: 600px; background: var(--el-fill-color-light);" >
           <el-tab-pane label="常用" name="basic">
