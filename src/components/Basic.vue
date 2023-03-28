@@ -27,8 +27,7 @@ export default {
         setting: Object
     },
     data() {
-        return {
-        }
+        return {}
     },
     created () {},
     methods: {
@@ -49,8 +48,8 @@ export default {
             }
         },
         selectPrompt ($event) {
-            console.dir($event.target)
-            console.dir($event.target.setAttribute("type", "success"));
+            let prompt = $event.currentTarget.firstElementChild;
+            this.$emit('updateSelect', prompt.innerText);
         }
     },
     computed: {

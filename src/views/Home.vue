@@ -12,6 +12,7 @@
           <el-form-item>
             <el-button type="primary" plain @click="copyPrompt" class="copyBtn">复制</el-button>
             <el-button type="warning" style="margin-left: .5rem;" plain @click="this.form.prompt=''">清空</el-button>
+            <el-button style="margin-left: .5rem;" plain @click="this.form.prompt=this.prompt">默认</el-button>
             <el-button type="danger" style="margin-left: .5rem;" plain v-if="setting.adult" @click="adultPrompt">成人默认</el-button>
           </el-form-item>
           <el-form-item label="反向标签">
@@ -19,7 +20,7 @@
           </el-form-item>
           <el-form-item>
             <el-button type="primary" plain @click="copyNegativePrompt" class="copyBtn">复制</el-button>
-            <el-button style="margin-left: .5rem;" plain @click="this.form.negative_prompt=''">清空</el-button>
+            <el-button type="warning" style="margin-left: .5rem;" plain @click="this.form.negative_prompt=''">清空</el-button>
             <el-button style="margin-left: .5rem;" plain @click="this.form.negative_prompt=this.negative_prompt">默认</el-button>
           </el-form-item>
         </el-form>
@@ -35,7 +36,7 @@
         </el-steps>
         <el-tabs tabPosition="left" activeName="basic" style="background: var(--el-fill-color-light);">
           <el-tab-pane label="常用" name="basic">
-            <Basic :setting="this.setting" />
+            <Basic :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
           <el-tab-pane label="环境" name="environment">
             <Environment :setting="this.setting" />
@@ -179,6 +180,10 @@ export default {
         //释放内存
         clipboard.destroy()
       })
+    },
+    updateSelect: function(prompt) {
+      alert(prompt)
+      this.form.prompt = prompt
     }
   },
 }
