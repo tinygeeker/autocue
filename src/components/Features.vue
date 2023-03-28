@@ -1,5 +1,5 @@
 <template>
-    <div class="app-container">
+    <div class="app-container" style="height: 600px;overflow-y: auto;">
         <span v-for="prompt in prompts">
             <el-divider content-position="left">{{ prompt.name }}</el-divider>
             <span v-for="item in prompt.items" class="prompt">
