@@ -19,10 +19,10 @@
 </template>
   
 <script>
-import prompts from '../data/legs'
+import prompts from '../data/foot'
 
 export default {
-    name: 'Legs',
+    name: 'Foot',
     props: {
         setting: Object
     },

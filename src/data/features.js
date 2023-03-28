@@ -108,7 +108,7 @@ const prompts = [
         name: '成年',
         items: [
             { en: 'hanging breasts', zh: '胸晃来晃去' },
-            { en: 'bouncing breasts', zh: '胸弹来弹去' }
+            { en: 'bouncing breasts', zh: '胸弹来弹去' },
             { en: 'breasts out', zh: '露出胸部' },
             { en: 'one breast out', zh: '露出一边' },
             { en: 'naughty_face', zh: '下流的表情' },

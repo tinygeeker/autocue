@@ -59,8 +59,8 @@
           <el-tab-pane label="服装" name="clothing">
             <Clothing :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
-          <el-tab-pane label="腿部" name="legs">
-            <Legs :setting="this.setting" @updateSelect="updateSelect"/>
+          <el-tab-pane label="腿部" name="foot">
+            <Foot :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
           <el-tab-pane label="鞋子" name="shoe">
             <Shoe :setting="this.setting" @updateSelect="updateSelect"/>
@@ -86,7 +86,7 @@ import Hair from '../components/Hair.vue'
 import Features from '../components/Features.vue'
 import Eyes from '../components/Eyes.vue'
 import Clothing from '../components/Clothing.vue'
-import Legs from '../components/Legs.vue'
+import Foot from '../components/Foot.vue'
 import Shoe from '../components/Shoe.vue'
 import Action from '../components/Action.vue'
 
@@ -101,7 +101,7 @@ export default {
     Features,
     Eyes,
     Clothing,
-    Legs,
+    Foot,
     Shoe,
     Action
   },
