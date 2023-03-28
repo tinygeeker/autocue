@@ -3,7 +3,8 @@ const prompts = [
         name: '画质优化',
         items: [
             { en: 'masterpiece', zh: '大师作品' },
-            { en: 'best quality', zh: '最高画质' }
+            { en: 'best quality', zh: '最高画质' },
+            { en: 'official art, extremely detailed CG unity 8k wallpaper', zh: '更高质量' },
         ]
     },
     {
@@ -11,7 +12,8 @@ const prompts = [
         items: [
             { en: 'wedding dress:china dress:0.3', zh: '旗袍婚纱' },
             { en: 'arms behind head', zh: '双手放脑后' },
-            { en: 'tiamat (fate)', zh: '提亚马特' }
+            { en: 'tiamat (fate)', zh: '提亚马特' },
+            { en: 'arms up, armpits', zh: '举手露腋' },
         ]
     },
     {

@@ -1,6 +1,6 @@
 <template>
   <el-card>
-    <el-row type="flex" justify="center" align="middle">
+    <el-row type="flex" justify="center">
       <el-col :span="2">
         <el-menu 
           router
@@ -13,7 +13,7 @@
             首页/生成器
           </el-menu-item>
           <el-menu-item index="/donate">
-            打赏/提需求
+            打赏/改需求
           </el-menu-item>
           <el-menu-item index="/group">
             交流/进群聊

@@ -39,40 +39,34 @@
             <Basic :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
           <el-tab-pane label="环境" name="environment">
-            <Environment :setting="this.setting" />
+            <Environment :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
           <el-tab-pane label="风格" name="style">
-            <Style :setting="this.setting" />
+            <Style :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
           <el-tab-pane label="人物" name="character">
-            <Character :setting="this.setting" />
+            <Character :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
           <el-tab-pane label="头发" name="hair">
-            <Hair :setting="this.setting" />
+            <Hair :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
           <el-tab-pane label="五官" name="features">
-            <Features :setting="this.setting" />
+            <Features :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
           <el-tab-pane label="眼睛" name="eyes">
-            <Eyes :setting="this.setting" />
-          </el-tab-pane>
-          <el-tab-pane label="身体" name="body">
-            <Body :setting="this.setting" />
+            <Eyes :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
           <el-tab-pane label="服装" name="clothing">
-            <Clothing :setting="this.setting" />
+            <Clothing :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
           <el-tab-pane label="腿部" name="legs">
-            <Legs :setting="this.setting" />
+            <Legs :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
           <el-tab-pane label="鞋子" name="shoe">
-            <Shoe :setting="this.setting" />
+            <Shoe :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
           <el-tab-pane label="动作" name="action">
-            <Action :setting="this.setting" />
-          </el-tab-pane>
-          <el-tab-pane label="表情" name="emoji">
-            <Emoji :setting="this.setting" />
+            <Action :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
         </el-tabs>
       </el-col>
@@ -91,12 +85,10 @@ import Character from '../components/Character.vue'
 import Hair from '../components/Hair.vue'
 import Features from '../components/Features.vue'
 import Eyes from '../components/Eyes.vue'
-import Body from '../components/Body.vue'
 import Clothing from '../components/Clothing.vue'
 import Legs from '../components/Legs.vue'
 import Shoe from '../components/Shoe.vue'
 import Action from '../components/Action.vue'
-import Emoji from '../components/Emoji.vue'
 
 export default {
   name: 'Home',
@@ -108,12 +100,10 @@ export default {
     Hair,
     Features,
     Eyes,
-    Body,
     Clothing,
     Legs,
     Shoe,
-    Action,
-    Emoji
+    Action
   },
   data() {
     return {
@@ -182,8 +172,7 @@ export default {
       })
     },
     updateSelect: function(prompt) {
-      alert(prompt)
-      this.form.prompt = prompt
+      this.form.prompt += prompt + ', '
     }
   },
 }

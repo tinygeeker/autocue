@@ -48,7 +48,7 @@ export default {
             }
         },
         selectPrompt ($event) {
-            let prompt = $event.currentTarget.firstElementChild;
+            let prompt = $event.currentTarget.firstElementChild.firstElementChild;
             this.$emit('updateSelect', prompt.innerText);
         }
     },

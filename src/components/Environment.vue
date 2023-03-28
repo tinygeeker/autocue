@@ -3,13 +3,13 @@
         <span v-for="prompt in prompts">
             <el-divider content-position="left">{{ prompt.name }}</el-divider>
             <span v-for="item in prompt.items" class="prompt">
-                <el-button type="warning" v-if="setting.down" @click="downWeight">
+                <el-button type="warning" v-if="setting.down" @click="downWeight" plain>
                     <el-icon><Remove /></el-icon>
                 </el-button>
-                <el-button type="warning" v-if="setting.up" @click="upWeight">
+                <el-button type="warning" v-if="setting.up" @click="upWeight" plain>
                     <el-icon><CirclePlus /></el-icon>
                 </el-button>
-                <el-button>
+                <el-button @click="selectPrompt" plain>
                     <span v-if="setting.en">{{ item.en }}</span>
                     <span v-if="setting.zh">「{{ item.zh }}」</span>
                 </el-button>
@@ -22,13 +22,12 @@
 import prompts from '../data/environment'
 
 export default {
-    name: 'Style',
+    name: 'Environment',
     props: {
         setting: Object
     },
     data() {
-        return {
-        }
+        return {}
     },
     created () {},
     methods: {
@@ -47,6 +46,10 @@ export default {
             } else {
                 target.innerText = `{${target.innerText}}`
             }
+        },
+        selectPrompt ($event) {
+            let prompt = $event.currentTarget.firstElementChild.firstElementChild;
+            this.$emit('updateSelect', prompt.innerText);
         }
     },
     computed: {
