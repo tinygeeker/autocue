@@ -36,7 +36,7 @@
           <el-switch v-model="setting.adult" inactive-text="成年" />
         </el-steps>
         <el-tabs tabPosition="left" activeName="basic" style="height: 600px; background: var(--el-fill-color-light);" >
-          <el-tab-pane label="常用" name="basic">
+          <el-tab-pane label="基础" name="basic">
             <Basic :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
           <el-tab-pane label="环境" name="environment">
@@ -51,20 +51,23 @@
           <el-tab-pane label="头发" name="hair">
             <Hair :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
-          <el-tab-pane label="五官" name="features">
-            <Features :setting="this.setting" @updateSelect="updateSelect"/>
+          <el-tab-pane label="脸部" name="face">
+            <Face :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
-          <el-tab-pane label="眼睛" name="eyes">
-            <Eyes :setting="this.setting" @updateSelect="updateSelect"/>
+          <el-tab-pane label="脖颈" name="neck">
+            <Neck :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
-          <el-tab-pane label="服装" name="clothing">
-            <Clothing :setting="this.setting" @updateSelect="updateSelect"/>
+          <el-tab-pane label="手部" name="hand">
+            <Hand :setting="this.setting" @updateSelect="updateSelect"/>
+          </el-tab-pane>
+          <el-tab-pane label="胸部" name="chest">
+            <Chest :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
           <el-tab-pane label="腿部" name="foot">
             <Foot :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
-          <el-tab-pane label="鞋子" name="shoe">
-            <Shoe :setting="this.setting" @updateSelect="updateSelect"/>
+          <el-tab-pane label="服饰" name="dress">
+            <Dress :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
           <el-tab-pane label="动作" name="action">
             <Action :setting="this.setting" @updateSelect="updateSelect"/>
@@ -84,11 +87,12 @@ import Environment from '../components/Environment.vue'
 import Style from '../components/Style.vue'
 import Character from '../components/Character.vue'
 import Hair from '../components/Hair.vue'
-import Features from '../components/Features.vue'
-import Eyes from '../components/Eyes.vue'
-import Clothing from '../components/Clothing.vue'
+import Face from '../components/Face.vue'
+import Neck from '../components/Neck.vue'
+import Hand from '../components/Hand.vue'
+import Chest from '../components/Chest.vue'
 import Foot from '../components/Foot.vue'
-import Shoe from '../components/Shoe.vue'
+import Dress from '../components/Dress.vue'
 import Action from '../components/Action.vue'
 
 export default {
@@ -99,19 +103,20 @@ export default {
     Style,
     Character,
     Hair,
-    Features,
-    Eyes,
-    Clothing,
+    Face,
+    Neck,
+    Hand,
+    Chest,
     Foot,
-    Shoe,
+    Dress,
     Action
   },
   data() {
     return {
-      prompt: 'masterpiece, best quality, ',
-      negative_prompt: 'lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet,',
-      adult_prompt: 'masterpiece, best quality, surrounded, multiple others, exhibitionism, audience, background characters, crowd, public, humiliation, partially unbuttoned, realistic, photo, real, {{breasts out}}, {{large breasts}}, no bra, no_panties, undressing, skirt lift, shirt lift, small_nipples, leash,',
-      adult_negative_prompt: 'multiple breasts, (mutated hands and fingers:1.5 ), (long body :1.3), (mutation, poorly drawn :1.2) , black-white, bad anatomy, liquid body, liquid tongue, disfigured, malformed, mutated, anatomical nonsense, text font ui, error, malformed hands, long neck, blurred, lowers, lowres, bad anatomy, bad proportions, bad shadow, uncoordinated body, unnatural body, fused breasts, bad breasts, huge breasts, poorly drawn breasts, extra breasts, liquid breasts, heavy breasts, missing breasts, huge haunch, huge thighs, huge calf, bad hands, fused hand, missing hand, disappearing arms, disappearing thigh, disappearing calf, disappearing legs, fused ears, bad ears, poorly drawn ears, extra ears, liquid ears, heavy ears, missing ears, fused animal ears, bad animal ears, poorly drawn animal ears, extra animal ears, liquid animal ears, heavy animal ears, missing animal ears, text, ui, error, missing fingers, missing limb, fused fingers, one hand with more than 5 fingers, one hand with less than 5 fingers, one hand with more than 5 digit, one hand with less than 5 digit, extra digit, fewer digits, fused digit, missing digit, bad digit, liquid digit, colorful tongue, black tongue, cropped, watermark, username, blurry, JPEG artifacts, signature, 3D, 3D game, 3D game scene, 3D character, malformed feet, extra feet, bad feet, poorly drawn feet, fused feet, missing feet, extra shoes, bad shoes, fused shoes, more than two shoes, poorly drawn shoes, bad gloves, poorly drawn gloves, fused gloves, bad cum, poorly drawn cum, fused cum, bad hairs, poorly drawn hairs, fused hairs, big muscles, ugly, bad face, fused face, poorly drawn face, cloned face, big face, long face, bad eyes, fused eyes poorly drawn eyes, extra eyes, malformed limbs, more than 2 nipples, missing nipples, different nipples, fused nipples, bad nipples, poorly drawn nipples, black nipples, colorful nipples, gross proportions. short arm, (((missing arms))), missing thighs, missing calf, missing legs, mutation, duplicate, morbid, mutilated, poorly drawn hands, more than 1 left hand, more than 1 right hand, deformed, (blurry), disfigured, missing legs, extra arms, extra thighs, more than 2 thighs, extra calf, fused calf, extra legs, bad knee, extra knee, more than 2 legs, bad tails, bad mouth, fused mouth, poorly drawn mouth, bad tongue, tongue within mouth, too long tongue, black tongue, big mouth, cracked mouth, bad mouth, dirty face, dirty teeth, dirty pantie, fused pantie, poorly drawn pantie, fused cloth, poorly drawn cloth, bad pantie, yellow teeth, thick lips, bad cameltoe, colorful cameltoe, bad asshole, poorly drawn asshole, fused asshole, missing asshole, bad anus, bad pussy, bad crotch, bad crotch seam, fused anus, fused pussy, fused anus, fused crotch, poorly drawn crotch, fused seam, poorly drawn anus, poorly drawn pussy, poorly drawn crotch, poorly drawn crotch seam, bad thigh gap, missing thigh gap, fused thigh gap, liquid thigh gap, poorly drawn thigh gap, poorly drawn anus, bad collarbone, fused collarbone, missing collarbone, liquid collarbone, strong girl, obesity, worst quality, low quality, normal quality, liquid tentacles, bad tentacles, poorly drawn tentacles, split tentacles, fused tentacles, missing clit, bad clit, fused clit, colorful clit, black clit, liquid clit, QR code, bar code, censored, safety panties, safety knickers, beard, furry ,pony, pubic hair, mosaic, excrement, faeces, shit',
+      prompt: 'masterpiece, best quality, top quality, ultra highres, 8k hdr, 8k wallpaper, huge file size, intricate details, sharp focus, realistic, delicate, amazing, CG, finely detailed, beautiful detailed, colourful, ',
+      negative_prompt: 'lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet, ',
+      adult_prompt: 'masterpiece, best quality, top quality, ultra highres, 8k hdr, 8k wallpaper, huge file size, intricate details, sharp focus, realistic, delicate, amazing, CG, finely detailed, beautiful detailed, colourful, humiliation, partially unbuttoned, realistic, photo, real, {{breasts out}}, {{large breasts}}, no bra, no_panties, undressing, skirt lift, shirt lift, middle_nipples, leash, ',
+      adult_negative_prompt: 'worst quality, low quality, normal quality, ugly, bad_anatomy, bad_hands, extra_hands, missing_fingers, broken hand, more than two hands,well proportioned hands, more than two legs, unclear eyes, missing_arms, mutilated, extra limbs, extra legs, cloned face, fused fingers,extra_digit, ewer_digits, extra_digits, fewer digits, jpeg_artifacts, text, error, signature, watermark, username, blurry, worst_quality, low_quality, normal_quality, mirror image, Vague, paintings, sketches, (worst quality:2), (low quality:2), (normal quality:2), lowres, normal quality, ((monochrome)), ((grayscale)), skin spots, acnes, skin blemishes, age spot, cropped, bad feet, ',
       setting: {
         en: true,
         zh: false,

@@ -19,10 +19,10 @@
 </template>
   
 <script>
-import prompts from '../data/environment'
+import prompts from '../data/hand'
 
 export default {
-    name: 'Environment',
+    name: 'Hand',
     props: {
         setting: Object
     },

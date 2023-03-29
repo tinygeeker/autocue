@@ -1,6 +1,16 @@
 const prompts = [
     {
+        name: '腿部相关',
+        type: 'public',
+        items: [
+            { en: 'bandaged leg', zh: '包扎腿' },
+            { en: 'bandaid on leg', zh: '腿上的绷带' },
+            { en: 'mechanical legs', zh: '机械腿' },
+        ]
+    },
+    {
         name: '袜子相关',
+        type: 'public',
         items: [
             { en: 'bare legs', zh: '不穿袜子' },
             { en: 'garter straps', zh: '吊袜带' },
@@ -39,19 +49,29 @@ const prompts = [
         ]
     },
     {
-        name: '腿部相关',
+        name: '鞋子相关',
+        type: 'public',
         items: [
-            { en: 'bandaged leg', zh: '包扎腿' },
-            { en: 'bandaid on leg', zh: '腿上的绷带' },
-            { en: 'mechanical legs', zh: '机械腿' },
-            { en: 'bound legs', zh: '绑腿' },
-            { en: 'leg lock', zh: '锁腿' },
-            { en: 'thighhighs over pantyhose', zh: '连裤袜加长筒袜' },
+            { en: 'shoes', zh: '鞋子' },
+            { en: 'fashionable shoes', zh: '时尚的鞋子' },
+            { en: 'boots', zh: '靴子' },
+            { en: 'loafers', zh: '乐福鞋' },
+            { en: 'high heels', zh: '高跟鞋' },
+            { en: 'cross-laced_footwear', zh: '系带鞋' },
+            { en: 'mary_janes', zh: '玛丽珍鞋' },
+            { en: 'uwabaki', zh: '女式学生鞋' },
+            { en: 'slippers', zh: '拖鞋' },
+            { en: 'knee_boots', zh: '马靴' },
         ]
     },
     {
-        name: '成年',
+        name: '成人模式',
+        type: 'adult',
         items: [
+            { en: 'bound legs', zh: '绑腿' },
+            { en: 'leg lock', zh: '锁腿' },
+            { en: 'thighhighs over pantyhose', zh: '连裤袜加长筒袜' },
+            { en: 'barefoot', zh: '裸足' },
             { en: 'vibrator in thighhighs', zh: '长筒袜里塞跳蛋' },
             { en: 'torn pantyhose', zh: '撕裂的连裤袜' }
         ]

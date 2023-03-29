@@ -1,6 +1,7 @@
 const prompts = [
     {
         name: '头部动作',
+        type: 'public',
         items: [
             { en: 'head tilt', zh: '歪头' },
             { en: 'turning around', zh: '转头' },
@@ -10,7 +11,36 @@ const prompts = [
         ]
     },
     {
+        name: '眼部动作',
+        type: 'public',
+        items: [
+            { en: 'looking at viewer,', zh: '看你' },
+            { en: 'eyeball', zh: '盯着看' },
+            { en: 'wide eyed', zh: '睁大眼睛' },
+            { en: 'stare', zh: '凝视' },
+            { en: 'eyes closed,', zh: '闭眼' },
+            { en: 'wink', zh: '眨眼' },
+            { en: 'tears', zh: '哭' },
+            { en: 'crying with eyes open', zh: '睁眼哭' },
+            { en: 'one eye closed', zh: '闭一只眼' },
+            { en: 'half-closed eyes', zh: '半闭眼睛' },
+            { en: 'looking to the side', zh: '看旁边' },
+            { en: 'constricted pupils', zh: '收缩的瞳孔' },
+            { en: 'expressionless eyes', zh: '双眼无神' },
+        ]
+    },
+    {
+        name: '嘴部动作',
+        type: 'public',
+        items: [
+            { en: 'tongue out', zh: '吐舌头' },
+            { en: 'open mouth', zh: '张嘴' },
+            { en: 'clenched teeth', zh: '咬紧牙关' },
+        ]
+    },
+    {
         name: '手部动作',
+        type: 'public',
         items: [
             { en: 'hand_to_mouth', zh: '手放在嘴边' },
             { en: 'arm at side', zh: '手放头旁边' },
@@ -39,6 +69,7 @@ const prompts = [
     },
     {
         name: '腿部动作',
+        type: 'public',
         items: [
             { en: 'crossed_legs', zh: '二郎腿' },
             { en: 'leg_lift', zh: '抬一只脚' },
@@ -53,14 +84,18 @@ const prompts = [
         ]
     },
     {
-        name: '成年',
+        name: '成人模式',
+        type: 'adult',
         items: [
             { en: 'all_fours', zh: '四肢趴地' },
             { en: 'symmetrical_docking', zh: '女胸部贴一起' },
+            { en: 'no_panties', zh: '不穿内裤' },
+            { en: 'no bra', zh: '不穿胸罩' },
             { en: 'undressing', zh: '脱衣服' },
             { en: 'skirt lift', zh: '掀裙子' },
             { en: 'shirt lift', zh: '掀上衣' },
-            { en: 'adjusting_thighhigh', zh: '调整过膝袜' }
+            { en: 'adjusting_thighhigh', zh: '调整过膝袜' },
+            { en: 'ahegao', zh: '暴力行为' }
         ]
     }
 ];

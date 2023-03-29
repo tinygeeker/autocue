@@ -1,6 +1,7 @@
 const prompts = [
     {
         name: '时令气候',
+        type: 'public',
         items: [
             { en: 'day', zh: '白天' },
             { en: 'dusk', zh: '黄昏' },
@@ -9,6 +10,7 @@ const prompts = [
             { en: 'in summer', zh: '夏天' },
             { en: 'in autumn', zh: '秋天' },
             { en: 'in winter', zh: '冬天' },
+            { en: 'beautiful detailed sky', zh: '好天' },
             { en: 'sun', zh: '太阳' },
             { en: 'sunset', zh: '日落' },
             { en: 'moon', zh: '月亮' },
@@ -24,6 +26,7 @@ const prompts = [
     },
     {
         name: '地理位置',
+        type: 'public',
         items: [
             { en: 'sky', zh: '天空' },
             { en: 'sea', zh: '大海' },
@@ -36,7 +39,6 @@ const prompts = [
             { en: 'in hawaii', zh: '夏威夷' },
             { en: 'cityscape', zh: '城市风景' },
             { en: 'landscape', zh: '风景' },
-            { en: 'beautiful detailed sky', zh: '好天' },
             { en: 'beautiful detailed water', zh: '好水' },
             { en: 'on the beach', zh: '海滩上' },
             { en: 'on the ocean', zh: '在大海上' },

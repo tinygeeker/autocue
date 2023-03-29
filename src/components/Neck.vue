@@ -19,10 +19,10 @@
 </template>
   
 <script>
-import prompts from '../data/clothing'
+import prompts from '../data/neck'
 
 export default {
-    name: 'Clothing',
+    name: 'Neck',
     props: {
         setting: Object
     },
@@ -54,7 +54,7 @@ export default {
     },
     computed: {
         prompts: function () {
-            return this.setting.adult ? prompts : prompts.filter((item) => item.name !== '成年');
+            return this.setting.adult ? prompts : prompts.filter((item) => item.type !== 'adult');
         }
     }
 }

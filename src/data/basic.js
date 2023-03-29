@@ -1,23 +1,41 @@
 const prompts = [
     {
         name: '画质优化',
+        type: 'public',
         items: [
             { en: 'masterpiece', zh: '大师作品' },
-            { en: 'best quality', zh: '最高画质' },
-            { en: 'official art, extremely detailed CG unity 8k wallpaper', zh: '更高质量' },
+            { en: 'best quality', zh: '最佳品质' },
+            { en: 'top quality', zh: '最高质量' },
+            { en: 'ultra highres', zh: '超高分辨率' },
+            { en: '8k hdr', zh: '8k分辨率' },
+            { en: '8k wallpaper', zh: '壁纸' },
+            { en: 'huge file size', zh: '大文件' },
+            { en: 'intricate details', zh: '真实感' },
+            { en: 'sharp focus', zh: '锐聚焦' },
+            { en: 'realistic', zh: '写实' },
+            { en: 'delicate', zh: '精美' },
+            { en: 'amazing', zh: '令人惊叹' },
+            { en: 'CG', zh: '游戏CG' },
+            { en: 'finely detailed', zh: '精细' },
+            { en: 'beautiful detailed', zh: '细节' },
+            { en: 'colourful', zh: '丰富多彩' }
         ]
     },
     {
-        name: '其他标签',
+        name: '景观镜头',
+        type: 'public',
         items: [
-            { en: 'wedding dress:china dress:0.3', zh: '旗袍婚纱' },
-            { en: 'arms behind head', zh: '双手放脑后' },
-            { en: 'tiamat (fate)', zh: '提亚马特' },
-            { en: 'arms up, armpits', zh: '举手露腋' },
+            { en: 'lens flare', zh: '闪光镜头' },
+            { en: 'film grain', zh: '胶片颗粒' },
+            { en: 'film texture', zh: '胶片纹理' },
+            { en: 'urban background', zh: '城市背景' },
+            { en: 'outdoors', zh: '户外' },
+            { en: 'cityscape', zh: '城市景观' },
         ]
     },
     {
-        name: '成年',
+        name: '成人模式',
+        type: 'adult',
         items: [
             { en: 'surrounded, multiple others, exhibitionism, audience, background characters, crowd, public humiliation', zh: '露出' },
             { en: 'partially unbuttoned', zh: '解开一部分扣子' },

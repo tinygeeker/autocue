@@ -1,6 +1,7 @@
 const prompts = [
     {
         name: '头发长度',
+        type: 'public',
         items: [
             { en: 'very short hair', zh: '超短发' },
             { en: 'short hair', zh: '短发' },
@@ -14,6 +15,7 @@ const prompts = [
     },
     {
         name: '头发颜色',
+        type: 'public',
         items: [
             { en: 'blonde hair', zh: '金色' },
             { en: 'brown hair', zh: '棕色' },
@@ -39,16 +41,13 @@ const prompts = [
             { en: 'aqua hair', zh: '水色' },
             { en: 'colored inner hair', zh: '内层彩发' },
             { en: 'alternate hair color', zh: '交替发色' },
-            { en: 'hair up', zh: '头发盘起来' },
-            { en: 'hair down', zh: '头发下垂' },
-            { en: 'wet hair', zh: '湿的头发' },
         ]
     },
     {
         name: '发型相关',
+        type: 'public',
         items: [
-            { en: 'ahoge', zh: '呆毛' },
-            { en: 'antenna hair', zh: '多根呆毛' },
+            { en: 'long wavy hair', zh: '大波浪' },
             { en: 'bob cut', zh: '妹妹切' },
             { en: 'hime_cut', zh: '公主切' },
             { en: 'crossed bangs', zh: '交叉刘海' },
@@ -56,8 +55,8 @@ const prompts = [
             { en: 'disheveled hair', zh: '蓬松的头发' },
             { en: 'wavy hair', zh: '波浪发' },
             { en: 'curly_hair', zh: '卷发' },
-            { en: 'hair in takes', zh: '收拢' },
-            { en: 'forehead', zh: '露额头' },
+            { en: 'ahoge', zh: '呆毛' },
+            { en: 'antenna hair', zh: '多根呆毛' },
             { en: 'drill hair', zh: '公主卷' },
             { en: 'hair bun', zh: '包子头' },
             { en: 'double_bun', zh: '两包子头' },
@@ -71,13 +70,15 @@ const prompts = [
             { en: 'hair strand', zh: '发束' },
             { en: 'hair twirling', zh: '卷发' },
             { en: 'pointy hair', zh: '飞机头' },
+            { en: 'forehead', zh: '露额头' },
+            { en: 'hair in takes', zh: '发型收拢' },
             { en: 'hair slicked back', zh: '头发向后梳' },
             { en: 'hair pulled back', zh: '头发向后拉' },
-            { en: 'split-color hair', zh: '单色头发' },
         ]
     },
     {
         name: '辫子相关',
+        type: 'public',
         items: [
             { en: 'braid', zh: '辫子' },
             { en: 'twin braids', zh: '双辫子' },
@@ -97,6 +98,7 @@ const prompts = [
     },
     {
         name: '刘海相关',
+        type: 'public',
         items: [
             { en: 'bangs', zh: '刘海' },
             { en: 'blunt bangs', zh: '齐刘海' },
@@ -113,11 +115,11 @@ const prompts = [
             { en: 'hair over one eye', zh: '遮住一只眼睛' },
             { en: 'hair over eyes', zh: '遮住双眼' },
             { en: 'hair behind ear', zh: '别在耳朵后面' },
-            { en: 'hair between breasts', zh: '胸前的头发' }
         ]
     },
     {
         name: '头发装饰',
+        type: 'public',
         items: [
             { en: 'hair ornament', zh: '发饰' },
             { en: 'hair bow', zh: '蝴蝶结' },
@@ -163,6 +165,13 @@ const prompts = [
             { en: 'snowflake hair ornament', zh: '雪花发饰' },
             { en: 'purple hairband', zh: '紫色发带' },
             { en: 'hair beads', zh: '发珠' },
+        ]
+    },
+    {
+        name: '成人模式',
+        type: 'adult',
+        items: [
+            { en: 'wet_hair', zh: '潮湿的头发' },
         ]
     }
 ];

@@ -54,7 +54,7 @@ export default {
     },
     computed: {
         prompts: function () {
-            return this.setting.adult ? prompts : prompts.filter((item) => item.name !== '成年');
+            return this.setting.adult ? prompts : prompts.filter((item) => item.type !== 'adult');
         }
     }
 }
