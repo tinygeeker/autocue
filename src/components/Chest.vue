@@ -33,7 +33,7 @@ export default {
     methods: {
         downWeight($event) {
             let target = $event.currentTarget.parentElement.lastElementChild.firstElementChild.firstElementChild;
-            if(target.innerText.startsWith('{') && target.innerText.endsWith('}')) {
+            if(target.innerText.startsWith('(') && target.innerText.endsWith(')')) {
                 target.innerText = target.innerText.substring(1, target.innerText.length -1)
             } else {
                 target.innerText = `[${target.innerText}]`
@@ -44,7 +44,7 @@ export default {
             if(target.innerText.startsWith('[') && target.innerText.endsWith(']')) {
                 target.innerText = target.innerText.substring(1, target.innerText.length -1)
             } else {
-                target.innerText = `{${target.innerText}}`
+                target.innerText = `(${target.innerText})`
             }
         },
         selectPrompt ($event) {
