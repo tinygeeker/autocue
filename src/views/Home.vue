@@ -54,9 +54,6 @@
           <el-tab-pane label="脸部" name="face">
             <Face :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
-          <el-tab-pane label="脖颈" name="neck">
-            <Neck :setting="this.setting" @updateSelect="updateSelect"/>
-          </el-tab-pane>
           <el-tab-pane label="手部" name="hand">
             <Hand :setting="this.setting" @updateSelect="updateSelect"/>
           </el-tab-pane>
@@ -88,7 +85,6 @@ import Style from '../components/Style.vue'
 import Character from '../components/Character.vue'
 import Hair from '../components/Hair.vue'
 import Face from '../components/Face.vue'
-import Neck from '../components/Neck.vue'
 import Hand from '../components/Hand.vue'
 import Chest from '../components/Chest.vue'
 import Foot from '../components/Foot.vue'
@@ -104,7 +100,6 @@ export default {
     Character,
     Hair,
     Face,
-    Neck,
     Hand,
     Chest,
     Foot,

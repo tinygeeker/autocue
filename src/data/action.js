@@ -87,7 +87,10 @@ const prompts = [
         name: '成人模式',
         type: 'adult',
         items: [
+            { en: 'POV from behind', zh: '后面第一视角' },
             { en: 'all_fours', zh: '四肢趴地' },
+            { en: 'vaginal insertion', zh: '阴道插入' },
+            { en: 'vaginal penetration from behind', zh: '后入' },
             { en: 'symmetrical_docking', zh: '女胸部贴一起' },
             { en: 'no_panties', zh: '不穿内裤' },
             { en: 'no bra', zh: '不穿胸罩' },
