@@ -6,23 +6,43 @@
     <el-row type="flex" justify="center" :gutter="20">
       <el-col :span="12">
         <el-form ref="form" :model="form" label-position="right" label-width="100px">
+          <el-form-item label="正向预览">
+            <el-tag :key="tag" v-for="tag in promptTags" type="success" :closable="setting.del" @close="closePromptTags(tag)"
+              style="margin-right: .2rem;">
+              <span v-if="setting.en">{{ tag.en }}</span>
+              <span v-if="setting.zh">「{{ tag.zh }}」</span>
+            </el-tag>
+          </el-form-item>
           <el-form-item label="正向标签">
-            <el-input v-model="form.prompt" type="textarea" :rows="10" placeholder="Prompt" />
+            <el-input v-model="form.prompt" type="textarea" :rows="5" placeholder="prompt" maxlength="9999"
+              show-word-limit />
           </el-form-item>
           <el-form-item>
             <el-button type="primary" plain @click="copyPrompt" class="copyBtn">复制</el-button>
-            <el-button type="warning" style="margin-left: .5rem;" plain @click="this.form.prompt=''">清空</el-button>
-            <el-button style="margin-left: .5rem;" plain @click="this.form.prompt=this.prompt">默认</el-button>
-            <el-button type="danger" style="margin-left: .5rem;" plain v-if="setting.adult" @click="adultPrompt">成人默认</el-button>
+            <el-button type="warning" style="margin-left: .5rem;" plain @click="this.form.prompt = ''">清空</el-button>
+            <el-button style="margin-left: .5rem;" plain @click="this.form.prompt = this.prompt">默认</el-button>
+            <el-button type="danger" style="margin-left: .5rem;" plain v-if="setting.adult"
+              @click="adultPrompt">成人默认</el-button>
+          </el-form-item>
+          <el-form-item label="反向预览">
+            <el-tag :key="tag" v-for="tag in negativePromptTags" type="danger" :closable="setting.del"
+              @close="closeNegativePromptTags(tag)" style="margin-right: .2rem;">
+              <span v-if="setting.en">{{ tag.en }}</span>
+              <span v-if="setting.zh">「{{ tag.zh }}」</span>
+            </el-tag>
           </el-form-item>
           <el-form-item label="反向标签">
-            <el-input v-model="form.negative_prompt" type="textarea" :rows="10" placeholder="Negative Prompt" />
+            <el-input v-model="form.negative_prompt" type="textarea" :rows="5" placeholder="negative prompt"
+              maxlength="9999" show-word-limit />
           </el-form-item>
           <el-form-item>
             <el-button type="primary" plain @click="copyNegativePrompt" class="copyBtn">复制</el-button>
-            <el-button type="warning" style="margin-left: .5rem;" plain @click="this.form.negative_prompt=''">清空</el-button>
-            <el-button style="margin-left: .5rem;" plain @click="this.form.negative_prompt=this.negative_prompt">默认</el-button>
-            <el-button type="danger" style="margin-left: .5rem;" plain v-if="setting.adult" @click="adultNegativePrompt">成人默认</el-button>
+            <el-button type="warning" style="margin-left: .5rem;" plain
+              @click="this.form.negative_prompt = ''">清空</el-button>
+            <el-button style="margin-left: .5rem;" plain
+              @click="this.form.negative_prompt = this.negative_prompt">默认</el-button>
+            <el-button type="danger" style="margin-left: .5rem;" plain v-if="setting.adult"
+              @click="adultNegativePrompt">成人默认</el-button>
           </el-form-item>
         </el-form>
       </el-col>
@@ -33,41 +53,41 @@
           <el-switch v-model="setting.down" inactive-text="降权" />
           <el-switch v-model="setting.up" inactive-text="加权" />
           <el-switch v-model="setting.del" inactive-text="删除" />
-          <el-switch v-model="setting.adult" inactive-text="成年" />
+          <el-switch v-model="setting.adult" inactive-text="成人" />
         </el-steps>
-        <el-tabs tabPosition="left" activeName="basic" style="height: 600px; background: var(--el-fill-color-light);" >
+        <el-tabs tabPosition="left" activeName="basic" style="height: 600px; background: var(--el-fill-color-light);">
           <el-tab-pane label="基础" name="basic">
-            <Basic :setting="this.setting" @updateSelect="updateSelect"/>
+            <Basic :setting="this.setting" @updateSelect="updateSelect" />
           </el-tab-pane>
           <el-tab-pane label="环境" name="environment">
-            <Environment :setting="this.setting" @updateSelect="updateSelect"/>
+            <Environment :setting="this.setting" @updateSelect="updateSelect" />
           </el-tab-pane>
           <el-tab-pane label="风格" name="style">
-            <Style :setting="this.setting" @updateSelect="updateSelect"/>
+            <Style :setting="this.setting" @updateSelect="updateSelect" />
           </el-tab-pane>
           <el-tab-pane label="人物" name="character">
-            <Character :setting="this.setting" @updateSelect="updateSelect"/>
+            <Character :setting="this.setting" @updateSelect="updateSelect" />
           </el-tab-pane>
           <el-tab-pane label="头发" name="hair">
-            <Hair :setting="this.setting" @updateSelect="updateSelect"/>
+            <Hair :setting="this.setting" @updateSelect="updateSelect" />
           </el-tab-pane>
           <el-tab-pane label="脸部" name="face">
-            <Face :setting="this.setting" @updateSelect="updateSelect"/>
+            <Face :setting="this.setting" @updateSelect="updateSelect" />
           </el-tab-pane>
           <el-tab-pane label="手部" name="hand">
-            <Hand :setting="this.setting" @updateSelect="updateSelect"/>
+            <Hand :setting="this.setting" @updateSelect="updateSelect" />
           </el-tab-pane>
           <el-tab-pane label="胸部" name="chest">
-            <Chest :setting="this.setting" @updateSelect="updateSelect"/>
+            <Chest :setting="this.setting" @updateSelect="updateSelect" />
           </el-tab-pane>
           <el-tab-pane label="腿部" name="foot">
-            <Foot :setting="this.setting" @updateSelect="updateSelect"/>
+            <Foot :setting="this.setting" @updateSelect="updateSelect" />
           </el-tab-pane>
           <el-tab-pane label="服饰" name="dress">
-            <Dress :setting="this.setting" @updateSelect="updateSelect"/>
+            <Dress :setting="this.setting" @updateSelect="updateSelect" />
           </el-tab-pane>
           <el-tab-pane label="动作" name="action">
-            <Action :setting="this.setting" @updateSelect="updateSelect"/>
+            <Action :setting="this.setting" @updateSelect="updateSelect" />
           </el-tab-pane>
         </el-tabs>
       </el-col>
@@ -108,6 +128,14 @@ export default {
   },
   data() {
     return {
+      promptTags: [
+        { en: 'masterpiece', zh: '大师作品' },
+        { en: 'best quality', zh: '高质量' },
+      ],
+      negativePromptTags: [
+        { en: 'lowres', zh: '低分辨率' },
+        { en: 'bad anatomy', zh: '错误的人体构造' },
+      ],
       prompt: 'masterpiece, best quality, top quality, ultra highres, 8k hdr, 8k wallpaper, huge file size, intricate details, sharp focus, realistic, delicate, amazing, CG, finely detailed, beautiful detailed, colourful, ',
       negative_prompt: 'lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet, ',
       adult_prompt: 'masterpiece, best quality, top quality, ultra highres, 8k hdr, 8k wallpaper, huge file size, intricate details, sharp focus, realistic, delicate, amazing, CG, finely detailed, beautiful detailed, colourful, humiliation, partially unbuttoned, realistic, photo, real, {{breasts out}}, {{large breasts}}, no bra, no_panties, undressing, skirt lift, shirt lift, middle_nipples, leash, ',
@@ -127,16 +155,24 @@ export default {
       }
     }
   },
-  created () {
+  created() {
     this.form.prompt = this.prompt;
     this.form.negative_prompt = this.negative_prompt;
   },
   methods: {
-    adultPrompt: function() {
+    adultPrompt: function () {
       this.form.prompt = this.adult_prompt
     },
     adultNegativePrompt: function () {
       this.form.negative_prompt = this.adult_negative_prompt
+    },
+    closePromptTags(tag) {
+      ElMessage.info('功能开发中...');
+      /* this.PromptTags.splice(this.PromptTags.indexOf(tag), 1); */
+    },
+    closeNegativePromptTags(tag) {
+      ElMessage.info('功能开发中...');
+      /* this.negativePromptTags.splice(this.negativePromptTags.indexOf(tag), 1); */
     },
     copyPrompt: function () {
       let that = this
@@ -176,7 +212,7 @@ export default {
         clipboard.destroy()
       })
     },
-    updateSelect: function(prompt) {
+    updateSelect: function (prompt) {
       this.form.prompt += prompt + ', '
     }
   },
