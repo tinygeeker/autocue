@@ -1,7 +1,8 @@
 const prompts = [
     {
         name: '服饰类型',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'hat', zh: '帽子' },
             { en: 'wedding_dress', zh: '婚纱' },
@@ -47,7 +48,8 @@ const prompts = [
     },
     {
         name: '泳装相关',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'bikini', zh: '比基尼' },
             { en: 'swimsuit', zh: '泳装' },
@@ -65,7 +67,8 @@ const prompts = [
     },
     {
         name: '成人模式',
-        type: 'adult',
+        visible: false,
+        range: 'adult',
         items: [
             { en: 'open_clothes', zh: '敞开的衬衫' },
             { en: 'victorian', zh: '褶边文胸' },

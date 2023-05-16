@@ -1,7 +1,8 @@
 const prompts = [
     {
         name: '胸部大小',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'small breasts', zh: '小' },
             { en: 'medium breasts', zh: '中' },
@@ -12,7 +13,8 @@ const prompts = [
     },
     {
         name: '成人模式',
-        type: 'adult',
+        visible: false,
+        range: 'adult',
         items: [
             { en: 'hanging breasts', zh: '胸晃来晃去' },
             { en: 'bouncing breasts', zh: '胸弹来弹去' },

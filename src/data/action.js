@@ -1,7 +1,8 @@
 const prompts = [
     {
         name: '头部动作',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'head tilt', zh: '歪头' },
             { en: 'turning around', zh: '转头' },
@@ -12,7 +13,8 @@ const prompts = [
     },
     {
         name: '眼部动作',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'looking at viewer', zh: '看你' },
             { en: 'eyeball', zh: '盯着看' },
@@ -31,7 +33,8 @@ const prompts = [
     },
     {
         name: '嘴部动作',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'tongue out', zh: '吐舌头' },
             { en: 'open mouth', zh: '张嘴' },
@@ -40,7 +43,8 @@ const prompts = [
     },
     {
         name: '手部动作',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'hand_to_mouth', zh: '手放在嘴边' },
             { en: 'arm at side', zh: '手放头旁边' },
@@ -69,7 +73,8 @@ const prompts = [
     },
     {
         name: '腿部动作',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'crossed_legs', zh: '二郎腿' },
             { en: 'leg_lift', zh: '抬一只脚' },
@@ -85,7 +90,8 @@ const prompts = [
     },
     {
         name: '成人模式',
-        type: 'adult',
+        visible: false,
+        range: 'adult',
         items: [
             { en: 'POV from behind', zh: '后面第一视角' },
             { en: 'all_fours', zh: '四肢趴地' },

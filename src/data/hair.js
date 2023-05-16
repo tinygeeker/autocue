@@ -1,7 +1,8 @@
 const prompts = [
     {
         name: '头发长度',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'very short hair', zh: '超短发' },
             { en: 'short hair', zh: '短发' },
@@ -15,7 +16,8 @@ const prompts = [
     },
     {
         name: '头发颜色',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'blonde hair', zh: '金色' },
             { en: 'brown hair', zh: '棕色' },
@@ -45,7 +47,8 @@ const prompts = [
     },
     {
         name: '发型相关',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'long wavy hair', zh: '大波浪' },
             { en: 'bob cut', zh: '妹妹切' },
@@ -78,7 +81,8 @@ const prompts = [
     },
     {
         name: '辫子相关',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'braid', zh: '辫子' },
             { en: 'twin braids', zh: '双辫子' },
@@ -98,7 +102,8 @@ const prompts = [
     },
     {
         name: '刘海相关',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'bangs', zh: '刘海' },
             { en: 'blunt bangs', zh: '齐刘海' },
@@ -119,7 +124,8 @@ const prompts = [
     },
     {
         name: '头发装饰',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'hair ornament', zh: '发饰' },
             { en: 'hair bow', zh: '蝴蝶结' },
@@ -169,7 +175,8 @@ const prompts = [
     },
     {
         name: '成人模式',
-        type: 'adult',
+        visible: false,
+        range: 'adult',
         items: [
             { en: 'wet_hair', zh: '潮湿的头发' },
         ]

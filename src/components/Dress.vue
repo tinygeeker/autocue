@@ -1,18 +1,24 @@
 <template>
     <div class="app-container" style="height: 600px;overflow-y: auto;">
         <span v-for="prompt in prompts">
-            <el-divider content-position="left">{{ prompt.name }}</el-divider>
-            <span v-for="item in prompt.items" class="prompt">
-                <el-button type="warning" v-if="setting.down" @click="downWeight" plain>
-                    <el-icon><Remove /></el-icon>
-                </el-button>
-                <el-button type="warning" v-if="setting.up" @click="upWeight" plain>
-                    <el-icon><CirclePlus /></el-icon>
-                </el-button>
-                <el-button @click="selectPrompt" plain>
-                    <span v-if="setting.en">{{ item.en }}</span>
-                    <span v-if="setting.zh">「{{ item.zh }}」</span>
-                </el-button>
+            <span v-if="prompt.visible">
+                <el-divider content-position="left">{{ prompt.name }}</el-divider>
+                <span v-for="item in prompt.items" class="prompt">
+                    <el-button type="danger" v-if="setting.down" @click="downWeight" plain>
+                        <el-icon>
+                            <Remove />
+                        </el-icon>
+                    </el-button>
+                    <el-button type="success" v-if="setting.up" @click="upWeight" plain>
+                        <el-icon>
+                            <CirclePlus />
+                        </el-icon>
+                    </el-button>
+                    <el-button :type="item.checked ? 'primary' : ''" @click="selectPrompt($event, item);" plain>
+                        <span v-if="setting.en">{{ item.en }}</span>
+                        <span v-if="setting.zh">「{{ item.zh }}」</span>
+                    </el-button>
+                </span>
             </span>
         </span>
     </div>
@@ -29,32 +35,47 @@ export default {
     data() {
         return {}
     },
-    created () {},
+    created() { },
     methods: {
         downWeight($event) {
-            let target = $event.currentTarget.parentElement.lastElementChild.firstElementChild.firstElementChild;
-            if(target.innerText.startsWith('(') && target.innerText.endsWith(')')) {
-                target.innerText = target.innerText.substring(1, target.innerText.length -1)
+            let target = $event.currentTarget.parentElement.lastElementChild.firstElementChild.firstElementChild
+            if (target.innerText.startsWith('(') && target.innerText.endsWith(')')) {
+                target.innerText = target.innerText.substring(1, target.innerText.length - 1)
             } else {
                 target.innerText = `[${target.innerText}]`
             }
         },
         upWeight($event) {
-            let target = $event.currentTarget.parentElement.lastElementChild.firstElementChild.firstElementChild;
-            if(target.innerText.startsWith('[') && target.innerText.endsWith(']')) {
-                target.innerText = target.innerText.substring(1, target.innerText.length -1)
+            let target = $event.currentTarget.parentElement.lastElementChild.firstElementChild.firstElementChild
+            if (target.innerText.startsWith('[') && target.innerText.endsWith(']')) {
+                target.innerText = target.innerText.substring(1, target.innerText.length - 1)
             } else {
                 target.innerText = `(${target.innerText})`
             }
         },
-        selectPrompt ($event) {
-            let prompt = $event.currentTarget.firstElementChild.firstElementChild;
-            this.$emit('updateSelect', prompt.innerText);
+        selectPrompt($event, item) {
+            let prompt = $event.currentTarget.firstElementChild.firstElementChild
+            this.$emit('updateSelect', prompt.innerText)
+
+            item.checked = !item.checked
+            this.$forceUpdate()
         }
     },
     computed: {
         prompts: function () {
-            return this.setting.adult ? prompts : prompts.filter((item) => item.type !== 'adult');
+            return prompts.map((item) => {
+                if (this.setting.adult) {
+                    if (item.range == 'adult') {
+                        item.visible = true
+                    }
+                } else {
+                    if (item.range == 'adult') {
+                        item.visible = false
+                    }
+                }
+
+                return item
+            });
         }
     }
 }

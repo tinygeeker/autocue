@@ -1,7 +1,8 @@
 const prompts = [
     {
         name: '时令气候',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'day', zh: '白天' },
             { en: 'dusk', zh: '黄昏' },
@@ -26,7 +27,8 @@ const prompts = [
     },
     {
         name: '地理位置',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'sky', zh: '天空' },
             { en: 'sea', zh: '大海' },

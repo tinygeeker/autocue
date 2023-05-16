@@ -1,7 +1,8 @@
 const prompts = [
     {
         name: '人物数量',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'solo', zh: '单人' },
             { en: 'girl', zh: '女孩' },
@@ -18,7 +19,8 @@ const prompts = [
     },
     {
         name: '人物风格',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'idol', zh: '偶像' },
             { en: 'stewardess', zh: '空姐' },
@@ -58,7 +60,8 @@ const prompts = [
     },
     {
         name: '性格外表',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'mature', zh: '成熟' },
             { en: 'kawaii', zh: '卡哇伊' },
@@ -68,7 +71,8 @@ const prompts = [
     },
     {
         name: '成人模式',
-        type: 'adult',
+        visible: false,
+        range: 'adult',
         items: [
             { en: 'female pervert', zh: '痴女' },
             { en: 'milf', zh: '熟女' },

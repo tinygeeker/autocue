@@ -1,7 +1,8 @@
 const prompts = [
     {
         name: '腿部相关',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'bandaged leg', zh: '包扎腿' },
             { en: 'bandaid on leg', zh: '腿上的绷带' },
@@ -10,7 +11,8 @@ const prompts = [
     },
     {
         name: '袜子相关',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'bare legs', zh: '不穿袜子' },
             { en: 'garter straps', zh: '吊袜带' },
@@ -50,7 +52,8 @@ const prompts = [
     },
     {
         name: '鞋子相关',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'shoes', zh: '鞋子' },
             { en: 'fashionable shoes', zh: '时尚的鞋子' },
@@ -66,7 +69,8 @@ const prompts = [
     },
     {
         name: '成人模式',
-        type: 'adult',
+        visible: false,
+        range: 'adult',
         items: [
             { en: 'bound legs', zh: '绑腿' },
             { en: 'leg lock', zh: '锁腿' },

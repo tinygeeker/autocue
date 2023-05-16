@@ -1,7 +1,8 @@
 const prompts = [
     {
         name: '眼睛相关',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             // 眼睛颜色
             { en: 'black eyes', zh: '黑色眼睛' },
@@ -65,7 +66,8 @@ const prompts = [
     },
     {
         name: '耳朵相关',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'fake animal ears', zh: '动物耳朵' },
             { en: 'animal ear fluff', zh: '动物耳绒毛' },
@@ -81,7 +83,8 @@ const prompts = [
     },
     {
         name: '情绪相关',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'drunk', zh: '喝醉的' },
             { en: 'sad', zh: '悲伤' },
@@ -118,7 +121,8 @@ const prompts = [
     },
     {
         name: '成人模式',
-        type: 'adult',
+        visible: false,
+        range: 'adult',
         items: [
             { en: 'naughty_face', zh: '下流的表情' },
             { en: 'endured_face', zh: '忍耐的表情' },

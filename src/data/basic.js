@@ -1,7 +1,8 @@
 const prompts = [
     {
         name: '画质优化',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'masterpiece', zh: '大师作品' },
             { en: 'best quality', zh: '最佳品质' },
@@ -26,7 +27,8 @@ const prompts = [
     },
     {
         name: '景观镜头',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'Sharp focus', zh: '清晰聚焦' },
             { en: 'intense shadows', zh: '强烈的阴影' },
@@ -42,7 +44,8 @@ const prompts = [
     },
     {
         name: '成人模式',
-        type: 'adult',
+        visible: false,
+        range: 'adult',
         items: [
             { en: 'surrounded, multiple others, exhibitionism, audience, background characters, crowd, public humiliation', zh: '露出' },
             { en: 'partially unbuttoned', zh: '解开一部分扣子' },

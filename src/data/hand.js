@@ -1,7 +1,8 @@
 const prompts = [
     {
         name: '手部动作',
-        type: 'public',
+        visible: true,
+        range: 'all',
         items: [
             { en: 'off_shoulder', zh: '露单肩' },
             { en: 'bare_shoulders', zh: '露双肩' },
