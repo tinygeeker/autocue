@@ -14,11 +14,11 @@ const prompts = [
         name: '眼部动作',
         type: 'public',
         items: [
-            { en: 'looking at viewer,', zh: '看你' },
+            { en: 'looking at viewer', zh: '看你' },
             { en: 'eyeball', zh: '盯着看' },
             { en: 'wide eyed', zh: '睁大眼睛' },
             { en: 'stare', zh: '凝视' },
-            { en: 'eyes closed,', zh: '闭眼' },
+            { en: 'eyes closed', zh: '闭眼' },
             { en: 'wink', zh: '眨眼' },
             { en: 'tears', zh: '哭' },
             { en: 'crying with eyes open', zh: '睁眼哭' },

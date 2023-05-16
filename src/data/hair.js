@@ -153,7 +153,7 @@ const prompts = [
             { en: 'feather hair ornament', zh: '羽毛头饰' },
             { en: 'blue hairband', zh: '蓝色发带' },
             { en: 'bunny hair ornament', zh: '兔子头饰' },
-            { en: 'skull hair ornament,', zh: '骷髅头饰' },
+            { en: 'skull hair ornament', zh: '骷髅头饰' },
             { en: 'yellow hairband', zh: '黄色发带' },
             { en: 'pink hairband', zh: '粉色发带' },
             { en: 'dark blue hair', zh: '深蓝色头发' },
