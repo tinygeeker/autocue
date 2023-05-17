@@ -283,7 +283,6 @@ export default {
     initPrompts: function () {
       this.form.vprompts = Array.from(this.prompts)
       this.form.prompts = this.disposePrompts(this.form.vprompts)
-      console.log(this.prompts)
     },
     cancelNegativePrompts: function () {
       this.form.vnegative_prompts = []
