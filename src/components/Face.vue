@@ -30,12 +30,35 @@ import prompts from '../data/face'
 export default {
     name: 'Face',
     props: {
-        setting: Object
+        setting: Object,
+        vprompts: Array
     },
     data() {
         return {}
     },
-    created() { },
+    created() {
+        prompts.forEach(prompt => {
+            prompt.items.forEach(item => {
+                // 查找是否存在匹配的对象
+                const match = this.vprompts.find(i => i.en === item.en);
+                // 设置 checked 字段
+                item.checked = match ? true : false;
+            });
+        });
+    },
+    watch: {
+        'vprompts': function (newValue) {
+            const normalArray = Array.from(newValue);
+            prompts.forEach(prompt => {
+                prompt.items.forEach(item => {
+                    // 查找是否存在匹配的对象
+                    const match = normalArray.find(i => i.en === item.en);
+                    // 设置 checked 字段
+                    item.checked = match ? true : false;
+                });
+            });
+        }
+    },
     methods: {
         downWeight(item) {
             if (item.en.startsWith('(') && item.en.endsWith(')')) {
@@ -54,10 +77,10 @@ export default {
             this.$forceUpdate()
         },
         selectPrompt(item) {
-            this.$emit('selectPrompt', { en: item.en, zh: item.zh })
-
             item.checked = !item.checked
             this.$forceUpdate()
+
+            this.$emit('selectPrompt', item)
         }
     },
     computed: {

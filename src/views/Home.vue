@@ -59,37 +59,37 @@
         </el-steps>
         <el-tabs tabPosition="left" v-model="activeName" style="height: 600px; background: var(--el-fill-color-light);">
           <el-tab-pane label="基础" name="basic">
-            <Basic :setting="this.setting" @selectPrompt="selectPrompt" />
+            <Basic :setting="this.setting" :vprompts="this.form.vprompts" @selectPrompt="selectPrompt" />
           </el-tab-pane>
           <el-tab-pane label="环境" name="environment">
-            <Environment :setting="this.setting" @selectPrompt="selectPrompt" />
+            <Environment :setting="this.setting" :vprompts="this.form.vprompts" @selectPrompt="selectPrompt" />
           </el-tab-pane>
           <el-tab-pane label="风格" name="style">
-            <Style :setting="this.setting" @selectPrompt="selectPrompt" />
+            <Style :setting="this.setting" :vprompts="this.form.vprompts" @selectPrompt="selectPrompt" />
           </el-tab-pane>
           <el-tab-pane label="人物" name="character">
-            <Character :setting="this.setting" @selectPrompt="selectPrompt" />
+            <Character :setting="this.setting" :vprompts="this.form.vprompts" @selectPrompt="selectPrompt" />
           </el-tab-pane>
           <el-tab-pane label="头发" name="hair">
-            <Hair :setting="this.setting" @selectPrompt="selectPrompt" />
+            <Hair :setting="this.setting" :vprompts="this.form.vprompts" @selectPrompt="selectPrompt" />
           </el-tab-pane>
           <el-tab-pane label="脸部" name="face">
-            <Face :setting="this.setting" @selectPrompt="selectPrompt" />
+            <Face :setting="this.setting" :vprompts="this.form.vprompts" @selectPrompt="selectPrompt" />
           </el-tab-pane>
           <el-tab-pane label="手部" name="hand">
-            <Hand :setting="this.setting" @selectPrompt="selectPrompt" />
+            <Hand :setting="this.setting" :vprompts="this.form.vprompts" @selectPrompt="selectPrompt" />
           </el-tab-pane>
           <el-tab-pane label="胸部" name="chest">
-            <Chest :setting="this.setting" @selectPrompt="selectPrompt" />
+            <Chest :setting="this.setting" :vprompts="this.form.vprompts" @selectPrompt="selectPrompt" />
           </el-tab-pane>
           <el-tab-pane label="腿部" name="foot">
-            <Foot :setting="this.setting" @selectPrompt="selectPrompt" />
+            <Foot :setting="this.setting" :vprompts="this.form.vprompts" @selectPrompt="selectPrompt" />
           </el-tab-pane>
           <el-tab-pane label="服饰" name="dress">
-            <Dress :setting="this.setting" @selectPrompt="selectPrompt" />
+            <Dress :setting="this.setting" :vprompts="this.form.vprompts" @selectPrompt="selectPrompt" />
           </el-tab-pane>
           <el-tab-pane label="动作" name="action">
-            <Action :setting="this.setting" @selectPrompt="selectPrompt" />
+            <Action :setting="this.setting" :vprompts="this.form.vprompts" @selectPrompt="selectPrompt" />
           </el-tab-pane>
         </el-tabs>
       </el-col>
@@ -192,7 +192,7 @@ export default {
         { en: 'beautiful detailed', zh: '细节' },
         { en: 'colourful', zh: '丰富多彩' },
         { en: 'humiliation', zh: '羞耻的' },
-        { en: 'partially unbuttoned', zh: '部分暴露' },
+        { en: 'partially unbuttoned', zh: '解开一部分扣子' },
         { en: '{{breasts out}}', zh: '露乳' },
         { en: '{{large breasts}}', zh: '大胸' },
         { en: 'no bra', zh: '不穿胸罩' },
@@ -348,10 +348,23 @@ export default {
         clipboard.destroy()
       })
     },
-    selectPrompt: function (prompt) {
-      if (JSON.stringify(this.form.vprompts).indexOf(JSON.stringify(prompt)) === -1) {
-        this.form.vprompts.push(prompt)
-        this.form.prompts = this.disposePrompts(this.form.vprompts)
+    selectPrompt: function (data) {
+      let prompt = { en: data.en, zh: data.zh }
+
+      /* 仅英文判断 */
+      if (data.checked) {
+        if(!this.form.vprompts.some(item => item.en === prompt.en)) {
+          this.form.vprompts.push(prompt)
+          this.form.prompts = this.disposePrompts(this.form.vprompts)
+        }
+      } else {
+        if(this.form.vprompts.some(item => item.en === prompt.en)) {
+          const index = this.form.vprompts.findIndex(item => item.en === prompt.en);
+          if (index !== -1) {
+            this.form.vprompts.splice(index, 1);
+            this.form.prompts = this.disposePrompts(this.form.vprompts)
+          }
+        }
       }
     }
   },
