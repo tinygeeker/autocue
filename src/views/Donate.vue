@@ -49,7 +49,6 @@ export default {
     return {
       list: [
         { username: '*壁', money: '0.81', message: '还没有使用，但是先支持。', feedback: '感谢支持' },
-        { username: 'E*k', money: '6.6', message: '看见Vue写的直接来膜拜！', feedback: 'Vue很菜，因为是后端工程师。嘻嘻' },
         { username: '年**', money: '0.7', message: '好用，替群友感谢你', feedback: '感谢支持！' },
         { username: '鸡你太美', money: '0.3', message: '大佬加油啊，希望能加上权重', feedback: '已加' },
         { username: '希**', money: '0.01', message: '希望大佬多出一点常用组合', feedback: '好的，马上出' },
