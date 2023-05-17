@@ -4,17 +4,17 @@
             <span v-if="prompt.visible">
                 <el-divider content-position="left">{{ prompt.name }}</el-divider>
                 <span v-for="item in prompt.items" class="prompt">
-                    <el-button type="danger" v-if="setting.down" @click="downWeight" plain>
+                    <el-button type="danger" v-if="setting.down" @click="downWeight(item)" plain>
                         <el-icon>
                             <Remove />
                         </el-icon>
                     </el-button>
-                    <el-button type="success" v-if="setting.up" @click="upWeight" plain>
+                    <el-button type="success" v-if="setting.up" @click="upWeight(item)" plain>
                         <el-icon>
                             <CirclePlus />
                         </el-icon>
                     </el-button>
-                    <el-button :type="item.checked ? 'primary' : ''" @click="selectPrompt($event, item);" plain>
+                    <el-button :type="item.checked ? 'primary' : ''" @click="selectPrompt(item);" plain>
                         <span v-if="setting.en">{{ item.en }}</span>
                         <span v-if="setting.zh">「{{ item.zh }}」</span>
                     </el-button>
@@ -37,25 +37,24 @@ export default {
     },
     created() { },
     methods: {
-        downWeight($event) {
-            let target = $event.currentTarget.parentElement.lastElementChild.firstElementChild.firstElementChild
-            if (target.innerText.startsWith('(') && target.innerText.endsWith(')')) {
-                target.innerText = target.innerText.substring(1, target.innerText.length - 1)
+        downWeight(item) {
+            if (item.en.startsWith('(') && item.en.endsWith(')')) {
+                item.en = item.en.substring(1, item.en.length - 1)
             } else {
-                target.innerText = `[${target.innerText}]`
+                item.en = `[${item.en}]`
             }
+            this.$forceUpdate()
         },
-        upWeight($event) {
-            let target = $event.currentTarget.parentElement.lastElementChild.firstElementChild.firstElementChild
-            if (target.innerText.startsWith('[') && target.innerText.endsWith(']')) {
-                target.innerText = target.innerText.substring(1, target.innerText.length - 1)
+        upWeight(item) {
+            if (item.en.startsWith('[') && item.en.endsWith(']')) {
+                item.en = item.en.substring(1, item.en.length - 1)
             } else {
-                target.innerText = `(${target.innerText})`
+                item.en = `(${item.en})`
             }
+            this.$forceUpdate()
         },
-        selectPrompt($event, item) {
-            let prompt = $event.currentTarget.firstElementChild.firstElementChild
-            this.$emit('updateSelect', prompt.innerText)
+        selectPrompt(item) {
+            this.$emit('selectPrompt', { en: item.en, zh: item.zh })
 
             item.checked = !item.checked
             this.$forceUpdate()

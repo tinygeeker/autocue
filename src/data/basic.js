@@ -9,7 +9,7 @@ const prompts = [
             { en: 'top quality', zh: '最高质量' },
             { en: 'ultra highres', zh: '超高分辨率' },
             { en: '8k hdr', zh: '8k分辨率' },
-            { en: '8k wallpaper', zh: '壁纸' },
+            { en: '8k wallpaper', zh: '壁纸画质' },
             { en: 'RAW', zh: 'RAW照片' },
             { en: 'huge file size', zh: '大文件' },
             { en: 'intricate details', zh: '真实感' },
