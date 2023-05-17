@@ -7,11 +7,13 @@
       <el-col :span="12">
         <el-form ref="form" :model="form" label-position="right" label-width="100px">
           <el-form-item label="正向预览">
-            <el-tag :key="prompt" v-for="prompt in this.form.vprompts" type="success" :closable="setting.del"
-              @close="closePrompt(prompt)" style="margin: .2rem;">
-              <span v-if="setting.en">{{ prompt.en }}</span>
-              <span v-if="setting.zh">「{{ prompt.zh }}」</span>
-            </el-tag>
+            <el-row style="width:100%;height:6rem;overflow-y: scroll;">
+              <el-tag :key="prompt" v-for="prompt in this.form.vprompts" type="success" :closable="setting.del"
+                @close="closePrompt(prompt)" style="margin: .2rem;">
+                <span v-if="setting.en">{{ prompt.en }}</span>
+                <span v-if="setting.zh">「{{ prompt.zh }}」</span>
+              </el-tag>
+            </el-row>
           </el-form-item>
           <el-form-item label="正向标签">
             <el-input v-model="form.prompts" type="textarea" :rows="5" placeholder="prompt" maxlength="9999"
@@ -25,11 +27,13 @@
               @click="adultPrompt">成人默认</el-button>
           </el-form-item>
           <el-form-item label="反向预览">
-            <el-tag :key="prompt" v-for="prompt in this.form.vnegative_prompts" type="danger" :closable="setting.del"
-              @close="closeNegativePrompt(prompt)" style="margin: .2rem;">
-              <span v-if="setting.en">{{ prompt.en }}</span>
-              <span v-if="setting.zh">「{{ prompt.zh }}」</span>
-            </el-tag>
+            <el-row style="width:100%;height:6rem;overflow-y: scroll;">
+              <el-tag :key="prompt" v-for="prompt in this.form.vnegative_prompts" type="danger" :closable="setting.del"
+                @close="closeNegativePrompt(prompt)" style="margin: .2rem;">
+                <span v-if="setting.en">{{ prompt.en }}</span>
+                <span v-if="setting.zh">「{{ prompt.zh }}」</span>
+              </el-tag>
+            </el-row>
           </el-form-item>
           <el-form-item label="反向标签">
             <el-input v-model="form.negative_prompts" type="textarea" :rows="5" placeholder="negative prompt"
