@@ -48,6 +48,9 @@ export default {
   data() {
     return {
       list: [
+        { username: '*壁', money: '0.81', message: '还没有使用，但是先支持。', feedback: '感谢支持' },
+        { username: 'E*k', money: '6.6', message: '看见Vue写的直接来膜拜！', feedback: 'Vue很菜，因为是后端工程师。嘻嘻' },
+        { username: '年**', money: '0.7', message: '好用，替群友感谢你', feedback: '感谢支持！' },
         { username: '鸡你太美', money: '0.3', message: '大佬加油啊，希望能加上权重', feedback: '已加' },
         { username: '希**', money: '0.01', message: '希望大佬多出一点常用组合', feedback: '好的，马上出' },
         { username: '忍**', money: '0.5', message: '评价是请尽力做下去', feedback: '会的' },
@@ -61,9 +64,6 @@ export default {
         { username: '峰**', money: '0.52', message: '好用，替群友感谢你', feedback: '谢谢' },
         { username: '渊**', money: '0.13', message: '中国式英雄', feedback: '谢谢你，陌生人' },
         { username: '桢**', money: '0.26', message: '膜拜大佬', feedback: '还是成长中的菜鸟' },
-        { username: '奖**', money: '0.3', message: '加油', feedback: '奥里给' },
-        { username: '志**', money: '0.9', message: '就你有成年人按钮', feedback: '等等党终将胜利' },
-        { username: '年**', money: '0.7', message: '好用，替群友感谢你', feedback: '感谢支持！' },
       ]
     }
   }
