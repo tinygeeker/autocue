@@ -22,7 +22,7 @@ const prompts = [
             { en: 'slit pupils', zh: '猫眼' },
             { en: 'heterochromia ', zh: '异色瞳' },
             { en: 'heterochromia blue red', zh: '红蓝眼' },
-            { en: 'gradient_eyes', zh: '渐变眼' },
+            { en: 'gradient eyes', zh: '渐变眼' },
             { en: 'beautiful detailed eyes', zh: '美丽的眼睛' },
             // 眼睛状态
             { en: 'aqua eyes', zh: '水汪汪大眼' },
@@ -71,12 +71,12 @@ const prompts = [
         items: [
             { en: 'fake animal ears', zh: '动物耳朵' },
             { en: 'animal ear fluff', zh: '动物耳绒毛' },
-            { en: 'animal_ears', zh: '动物绒毛' },
-            { en: 'fox_ears', zh: '狐狸耳朵' },
-            { en: 'bunny_ears', zh: '兔子耳朵' },
-            { en: 'cat_ears', zh: '猫耳朵' },
-            { en: 'dog_ears', zh: '狗耳朵' },
-            { en: 'mouse_ears', zh: '鼠耳朵' },
+            { en: 'animal ears', zh: '动物绒毛' },
+            { en: 'fox ears', zh: '狐狸耳朵' },
+            { en: 'bunny ears', zh: '兔子耳朵' },
+            { en: 'cat ears', zh: '猫耳朵' },
+            { en: 'dog ears', zh: '狗耳朵' },
+            { en: 'mouse ears', zh: '鼠耳朵' },
             { en: 'hair ear', zh: '头发耳朵' },
             { en: 'pointy ears', zh: '尖耳' },
         ]
@@ -98,7 +98,7 @@ const prompts = [
             { en: 'jitome', zh: '鄙夷' },
             { en: 'scowl', zh: '锐利' },
             { en: 'crazy', zh: '疯狂' },
-            { en: 'dark_persona', zh: '黑化的' },
+            { en: 'dark persona', zh: '黑化的' },
             { en: 'smirk', zh: '微笑' },
             { en: 'smug', zh: '得意' },
             { en: 'confident pose', zh: '自信的姿势' },
@@ -114,19 +114,19 @@ const prompts = [
             { en: 'shy', zh: '害羞' },
             { en: 'nose blush', zh: '鼻红' },
             { en: 'eyelid pull', zh: '做鬼脸' },
-            { en: 'naughty_face', zh: '调皮脸' },
+            { en: 'naughty face', zh: '调皮脸' },
             { en: 'expressionless', zh: '无表情' },
             { en: 'sleepy', zh: '困' },
         ]
     },
     {
-        name: '成人模式',
+        name: '大人模式',
         visible: false,
         range: 'adult',
         items: [
-            { en: 'naughty_face', zh: '下流的表情' },
-            { en: 'endured_face', zh: '忍耐的表情' },
-            { en: 'blood on face', zh: '血在脸上' },
+            { en: 'naughty face', zh: '下流的表情' },
+            { en: 'endured face', zh: '忍耐的表情' },
+            { en: 'blood on face', zh: '脸部有血' },
             { en: 'saliva', zh: '唾液' },
         ]
     }

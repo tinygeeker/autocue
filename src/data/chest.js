@@ -12,7 +12,7 @@ const prompts = [
         ]
     },
     {
-        name: '成人模式',
+        name: '大人模式',
         visible: false,
         range: 'adult',
         items: [
@@ -22,8 +22,8 @@ const prompts = [
             { en: 'one breast out', zh: '露出一边' },
             { en: 'mole on breast', zh: '胸上有痣' },
             { en: 'between breasts', zh: '乳房之间' },
-            { en: 'all_fours', zh: '趴在地上' },
-            { en: 'symmetrical_docking', zh: '女胸部贴一起' },
+            { en: 'all fours', zh: '趴在地上' },
+            { en: 'symmetrical docking', zh: '女胸部贴一起' },
         ]
     }
 ];

@@ -15,7 +15,7 @@ const prompts = [
             { en: 'sun', zh: '太阳' },
             { en: 'sunset', zh: '日落' },
             { en: 'moon', zh: '月亮' },
-            { en: 'full_moon', zh: '满月' },
+            { en: 'full moon', zh: '满月' },
             { en: 'stars', zh: '星星' },
             { en: 'cloudy', zh: '多云' },
             { en: 'rain', zh: '下雨' },

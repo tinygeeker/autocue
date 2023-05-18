@@ -43,7 +43,7 @@ const prompts = [
         ]
     },
     {
-        name: '成人模式',
+        name: '大人模式',
         visible: false,
         range: 'adult',
         items: [
@@ -52,7 +52,7 @@ const prompts = [
             { en: 'show foot', zh: '展示足' },
             { en: 'pubic tattoo on underbelly', zh: '淫纹在小腹' },
             { en: 'spread pussy', zh: '掰开XX' },
-            { en: 'ass_visible_through_thighs', zh: '透过大腿可见屁股' },
+            { en: 'ass visible through thighs', zh: '透过大腿可见屁股' },
         ]
     }
 ];

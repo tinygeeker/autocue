@@ -44,12 +44,12 @@ const prompts = [
             { en: 'doll', zh: '人偶' },
             { en: 'mermaid', zh: '美人鱼' },
             { en: 'minigirl', zh: '迷你女孩' },
-            { en: 'no_humans', zh: '非人' },
+            { en: 'no humans', zh: '非人' },
             { en: 'student', zh: '学生' },
             { en: 'witch', zh: '女巫' },
             { en: 'giantess', zh: '女巨人' },
             { en: 'crossdressing', zh: '伪娘' },
-            { en: 'magical_girl', zh: '魔法少女' },
+            { en: 'magical girl', zh: '魔法少女' },
             { en: 'maid', zh: '女仆' },
             { en: 'miko', zh: '巫女' },
             { en: 'sisters', zh: '姐妹' },
@@ -70,7 +70,7 @@ const prompts = [
         ]
     },
     {
-        name: '成人模式',
+        name: '大人模式',
         visible: false,
         range: 'adult',
         items: [

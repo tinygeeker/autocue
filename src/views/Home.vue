@@ -24,7 +24,7 @@
             <el-button type="warning" style="margin-left: .5rem;" plain @click="cancelPrompts">清空</el-button>
             <el-button style="margin-left: .5rem;" plain @click="initPrompts">默认</el-button>
             <el-button type="danger" style="margin-left: .5rem;" plain v-if="setting.adult"
-              @click="adultPrompt">成人默认</el-button>
+              @click="adultPrompt">大人默认</el-button>
           </el-form-item>
           <el-form-item label="反向预览">
             <el-row style="width:100%;height:6rem;overflow-y: scroll;">
@@ -44,7 +44,7 @@
             <el-button type="warning" style="margin-left: .5rem;" plain @click="cancelNegativePrompts">清空</el-button>
             <el-button style="margin-left: .5rem;" plain @click="initNegativePrompts">默认</el-button>
             <el-button type="danger" style="margin-left: .5rem;" plain v-if="setting.adult"
-              @click="adultNegativePrompt">成人默认</el-button>
+              @click="adultNegativePrompt">大人默认</el-button>
           </el-form-item>
         </el-form>
       </el-col>
@@ -55,7 +55,7 @@
           <el-switch v-model="setting.down" inactive-text="降权" />
           <el-switch v-model="setting.up" inactive-text="加权" />
           <el-switch v-model="setting.del" inactive-text="删除" />
-          <el-switch v-model="setting.adult" inactive-text="成人" />
+          <el-switch v-model="setting.adult" inactive-text="大人" />
         </el-steps>
         <el-tabs tabPosition="left" v-model="activeName" style="height: 600px; background: var(--el-fill-color-light);">
           <el-tab-pane label="基础" name="basic">

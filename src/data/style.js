@@ -13,20 +13,20 @@ const prompts = [
             { en: 'crossover', zh: '穿越', checked: false },
             { en: 'guro', zh: '猎奇', checked: false },
             { en: 'landscape/scenery', zh: '风景', checked: false },
-            { en: 'science_fiction', zh: '科技幻想', checked: false },
-            { en: 'game_cg', zh: '游戏CG', checked: false },
-            { en: 'fine_art_parody', zh: '名画模仿', checked: false },
-            { en: 'traditional_media', zh: '传统媒体(手绘)', checked: false },
-            { en: 'watercolor_(medium)', zh: '透明水彩绘', checked: false },
+            { en: 'science fiction', zh: '科技幻想', checked: false },
+            { en: 'game cg', zh: '游戏CG', checked: false },
+            { en: 'fine art parody', zh: '名画模仿', checked: false },
+            { en: 'traditional media', zh: '传统媒体(手绘)', checked: false },
+            { en: 'watercolor (medium)', zh: '透明水彩绘', checked: false },
             { en: 'sample', zh: 'sample图', checked: false },
             { en: 'back', zh: '背影像', checked: false },
             { en: 'bust', zh: '半身像', checked: false },
             { en: 'profile', zh: '侧面绘', checked: false },
             { en: 'personification', zh: '拟人', checked: false },
             { en: '4koma', zh: '四格', checked: false },
-            { en: 'pixel_art', zh: '点阵图', checked: false },
+            { en: 'pixel art', zh: '点阵图', checked: false },
             { en: 'monochrome', zh: '单色图', checked: false },
-            { en: 'optical_illusion', zh: '视错觉', checked: false }
+            { en: 'optical illusion', zh: '视错觉', checked: false }
         ]
     }
 ];

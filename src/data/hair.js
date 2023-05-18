@@ -52,17 +52,17 @@ const prompts = [
         items: [
             { en: 'long wavy hair', zh: '大波浪' },
             { en: 'bob cut', zh: '妹妹切' },
-            { en: 'hime_cut', zh: '公主切' },
+            { en: 'hime cut', zh: '公主切' },
             { en: 'crossed bangs', zh: '交叉刘海' },
             { en: 'hair wings', zh: '飘逸的头发' },
             { en: 'disheveled hair', zh: '蓬松的头发' },
             { en: 'wavy hair', zh: '波浪发' },
-            { en: 'curly_hair', zh: '卷发' },
+            { en: 'curly hair', zh: '卷发' },
             { en: 'ahoge', zh: '呆毛' },
             { en: 'antenna hair', zh: '多根呆毛' },
             { en: 'drill hair', zh: '公主卷' },
             { en: 'hair bun', zh: '包子头' },
-            { en: 'double_bun', zh: '两包子头' },
+            { en: 'double bun', zh: '两包子头' },
             { en: 'straight hair', zh: '直发' },
             { en: 'spiked hair', zh: '尖刺头' },
             { en: 'short hair with long locks', zh: '短发长鬓角' },
@@ -96,7 +96,7 @@ const prompts = [
             { en: 'braided ponytail', zh: '编马尾辫' },
             { en: 'high ponytail', zh: '高马尾' },
             { en: 'twintails', zh: '双马尾' },
-            { en: 'short_ponytail', zh: '短马尾' },
+            { en: 'short ponytail', zh: '短马尾' },
             { en: 'Side ponytail', zh: '侧马尾辫' },
         ]
     },
@@ -174,11 +174,11 @@ const prompts = [
         ]
     },
     {
-        name: '成人模式',
+        name: '大人模式',
         visible: false,
         range: 'adult',
         items: [
-            { en: 'wet_hair', zh: '潮湿的头发' },
+            { en: 'wet hair', zh: '潮湿的头发' },
         ]
     }
 ];
