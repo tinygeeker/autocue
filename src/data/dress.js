@@ -79,8 +79,6 @@ const prompts = [
             { en: 'chemise', zh: '吊带胸衣' },
             { en: 'panties', zh: '内裤' },
             { en: 'striped panties', zh: '条纹内裤' },
-            { en: 'lowleg panties/low leg panties', zh: '低腰式内裤' },
-            { en: 'side-tie panties', zh: '侧系带内裤' },
             { en: 'string panties', zh: '高腰内裤' },
             { en: 'thong', zh: '丁字裤' },
             { en: 'fundoshi', zh: '日式内裤' },

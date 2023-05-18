@@ -93,18 +93,16 @@ const prompts = [
         visible: false,
         range: 'adult',
         items: [
-            // { en: 'POV from behind', zh: '后面第一视角' },
-            // { en: 'all fours', zh: '四肢趴地' },
-            // { en: 'vaginal insertion', zh: '阴道插入' },
-            // { en: 'vaginal penetration from behind', zh: '后入' },
-            // { en: 'symmetrical docking', zh: '女胸部贴一起' },
-            // { en: 'no panties', zh: '不穿内裤' },
-            // { en: 'no bra', zh: '不穿胸罩' },
-            // { en: 'undressing', zh: '脱衣服' },
-            // { en: 'skirt lift', zh: '掀裙子' },
-            // { en: 'shirt lift', zh: '掀上衣' },
-            // { en: 'adjusting thighhigh', zh: '调整过膝袜' },
-            // { en: 'ahegao', zh: '暴力行为' }
+            { en: 'POV from behind', zh: '后方第一视角' },
+            { en: 'vaginal insertion', zh: '深入交流' },
+            { en: 'vaginal penetration from behind', zh: '从后面' },
+            { en: 'no panties', zh: '不穿内裤' },
+            { en: 'no bra', zh: '不穿胸罩' },
+            { en: 'undressing', zh: '脱衣服' },
+            { en: 'skirt lift', zh: '掀裙子' },
+            { en: 'shirt lift', zh: '掀上衣' },
+            { en: 'adjusting thighhigh', zh: '调整过膝袜' },
+            { en: 'ahegao', zh: '暴力行为' }
         ]
     }
 ];

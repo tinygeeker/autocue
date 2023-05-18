@@ -22,7 +22,7 @@ const prompts = [
             { en: 'in the rain', zh: '在雨中' },
             { en: 'rainy days', zh: '雨天' },
             { en: 'snow', zh: '下雪' },
-            
+
         ]
     },
     {
@@ -56,6 +56,17 @@ const prompts = [
             { en: 'explosion', zh: '爆炸' },
             { en: 'in the cyberpunk city', zh: '在赛博朋克城市' },
             { en: 'steam', zh: '蒸汽' },
+        ]
+    },
+    {
+        name: '大人模式',
+        visible: false,
+        range: 'adult',
+        items: [
+            { en: 'in the bathtub', zh: '在浴缸' },
+            { en: 'on the balcony', zh: '在阳台' },
+            { en: 'at the dressing table', zh: '在化妆台' },
+            { en: 'all fours', zh: '趴在地上' },
         ]
     }
 ];

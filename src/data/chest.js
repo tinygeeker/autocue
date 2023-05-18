@@ -16,14 +16,13 @@ const prompts = [
         visible: false,
         range: 'adult',
         items: [
-            { en: 'hanging breasts', zh: '胸晃来晃去' },
-            { en: 'bouncing breasts', zh: '胸弹来弹去' },
-            { en: 'breasts out', zh: '露出胸部' },
+            { en: 'hanging breasts', zh: '🐻晃来晃去' },
+            { en: 'bouncing breasts', zh: '🐻弹来弹去' },
+            { en: 'breasts out', zh: '露出🐻' },
             { en: 'one breast out', zh: '露出一边' },
-            { en: 'mole on breast', zh: '胸上有痣' },
-            { en: 'between breasts', zh: '乳房之间' },
-            { en: 'all fours', zh: '趴在地上' },
-            { en: 'symmetrical docking', zh: '女胸部贴一起' },
+            { en: 'mole on breast', zh: '🐻有痣' },
+            { en: 'between breasts', zh: '两头🐻之间' },
+            { en: 'symmetrical docking', zh: '🐻挤一起' },
         ]
     }
 ];

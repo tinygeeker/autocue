@@ -74,9 +74,7 @@ const prompts = [
         items: [
             { en: 'bound legs', zh: '绑腿' },
             { en: 'leg lock', zh: '锁腿' },
-            { en: 'thighhighs over pantyhose', zh: '连裤袜加长筒袜' },
-            { en: 'barefoot', zh: '裸足' },
-            { en: 'vibrator in thighhighs', zh: '长筒袜里塞振动器' },
+            { en: 'barefoot', zh: '裸脚' },
             { en: 'torn pantyhose', zh: '撕裂的连裤袜' }
         ]
     }
