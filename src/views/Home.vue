@@ -15,7 +15,17 @@
               </el-tag>
             </el-row>
           </el-form-item>
-          <el-form-item label="正向标签">
+          <el-form-item>
+            <template v-slot:label>
+              <span style="align-items: center;">
+                <span>正向标签 </span>
+                <el-link type="primary" :underline="false">
+                  <el-tooltip placement="top" content="根据使用场景在右侧选择">
+                    <el-icon><Warning style="font-size: 15px; font-weight: 500" /></el-icon>
+                  </el-tooltip>
+                </el-link>
+              </span>
+            </template>
             <el-input v-model="form.prompts" type="textarea" :rows="5" placeholder="prompt" maxlength="9999"
               show-word-limit />
           </el-form-item>
@@ -35,16 +45,23 @@
               </el-tag>
             </el-row>
           </el-form-item>
-          <el-form-item label="反向标签">
+          <el-form-item>
+            <template v-slot:label>
+              <span style="align-items: center;">
+                <span>反向标签 </span>
+                <el-link type="primary" :underline="false">
+                  <el-tooltip placement="top" content="反向提示词基本万能，无需修改">
+                    <el-icon><Warning style="font-size: 15px; font-weight: 500" /></el-icon>
+                  </el-tooltip>
+                </el-link>
+              </span>
+            </template>
             <el-input v-model="form.negative_prompts" type="textarea" :rows="5" placeholder="negative prompt"
               maxlength="9999" show-word-limit />
           </el-form-item>
           <el-form-item>
             <el-button type="primary" plain @click="copyNegativePrompt" class="copyBtn">复制</el-button>
-            <el-button type="warning" style="margin-left: .5rem;" plain @click="cancelNegativePrompts">清空</el-button>
             <el-button style="margin-left: .5rem;" plain @click="initNegativePrompts">默认</el-button>
-            <el-button type="danger" style="margin-left: .5rem;" plain v-if="setting.adult"
-              @click="adultNegativePrompt">大人默认</el-button>
           </el-form-item>
         </el-form>
       </el-col>
@@ -141,7 +158,8 @@ export default {
         { en: 'RAW', zh: 'RAW照片' },
         { en: 'huge file size', zh: '大文件' },
         { en: 'intricate details', zh: '真实感' },
-        { en: 'sharp focus', zh: '锐聚焦' },
+        { en: 'sharp focus', zh: '清晰聚焦' },
+        { en: 'natural lighting', zh: '自然光线' },
         { en: 'realistic', zh: '写实' },
         { en: 'professional', zh: '专业的' },
         { en: 'delicate', zh: '精美' },
@@ -152,24 +170,56 @@ export default {
         { en: 'colourful', zh: '丰富多彩' },
       ],
       negative_prompts: [
+        { en: 'paintings', zh: '绘画' },
+        { en: 'sketches', zh: '素描' },
         { en: 'lowres', zh: '低分辨率' },
-        { en: 'bad anatomy', zh: '错误的人体构造' },
-        { en: 'bad hands', zh: '错误的手' },
-        { en: 'missing fingers', zh: '缺失的手指' },
-        { en: 'bad feet', zh: '坏的脚' },
-        { en: 'low quality', zh: '低质量' },
         { en: 'normal quality', zh: '普通质量' },
-        { en: 'worst quality', zh: '最差的质量' },
+        { en: 'worst quality', zh: '差质量' },
+        { en: 'low quality', zh: '低质量' },
+        { en: 'cropped', zh: '裁剪' },
+        { en: 'dot', zh: '斑点' },
+        { en: 'mole', zh: '痣' },
+        { en: 'ugly', zh: '丑陋' },
+        { en: 'grayscale', zh: '灰度' },
+        { en: 'monochrome', zh: '单色' },
+        { en: 'duplicate', zh: '重复' },
+        { en: 'morbid', zh: '病态' },
+        { en: 'mutilated', zh: '残缺' },
+        { en: 'missing fingers', zh: '缺失的手指' },
+        { en: 'extra fingers', zh: '多余的手指' },
+        { en: 'too many fingers', zh: '过多的手指' },
+        { en: 'fused fingers', zh: '融合的手指' },
+        { en: 'mutated hands', zh: '变异的手' },
+        { en: 'bad hands', zh: '错误的手' },
+        { en: 'poorly drawn hands', zh: '画的差的手' },
+        { en: 'poorly drawn face', zh: '画的差的脸' },
+        { en: 'poorly drawn eyebrows', zh: '画的差的眉毛' },
+        { en: 'bad anatomy', zh: '错误的人体构造' },
+        { en: 'cloned face', zh: '克隆脸' },
+        { en: 'long neck', zh: '长脖子' },
+        { en: 'extra legs', zh: '多余的腿' },
+        { en: 'extra arms', zh: '多臂' },
+        { en: 'missing arms missing legs', zh: '缺胳膊缺腿' },
+        { en: 'malformed limbs', zh: '肢体畸形' },
+        { en: 'deformed', zh: '变形' },
+        { en: 'simple background', zh: '简单的背景' },
+        { en: 'bad proportions', zh: '比例失调' },
+        { en: 'disfigured', zh: '毁容' },
+        { en: 'skin spots', zh: '皮肤斑点' },
+        { en: 'skin blemishes', zh: '皮肤瑕疵' },
+        { en: 'age spot', zh: '老年斑' },
+        { en: 'bad feet', zh: '坏的脚' },
         { en: 'error', zh: '错误' },
         { en: 'text', zh: '文字' },
-        { en: 'cropped', zh: '裁剪' },
         { en: 'extra digit', zh: '多余的数字' },
         { en: 'fewer digits', zh: '更少的数字' },
         { en: 'jpeg artifacts', zh: '人造图' },
         { en: 'signature', zh: '签名' },
         { en: 'username', zh: '用户名' },
-        { en: 'blurry', zh: '模糊不清的' },
+        { en: 'blurry', zh: '模糊' },
         { en: 'watermark', zh: '水印' },
+        { en: 'mask', zh: '面罩' },
+        { en: 'logo', zh: '徽标' },
       ],
       adult_prompts: [
         { en: 'masterpiece', zh: '大师作品' },
@@ -181,7 +231,8 @@ export default {
         { en: 'RAW', zh: 'RAW照片' },
         { en: 'huge file size', zh: '大文件' },
         { en: 'intricate details', zh: '真实感' },
-        { en: 'sharp focus', zh: '锐聚焦' },
+        { en: 'sharp focus', zh: '清晰聚焦' },
+        { en: 'natural lighting', zh: '自然光线' },
         { en: 'realistic', zh: '写实' },
         { en: 'real', zh: '真实' },
         { en: 'professional', zh: '专业的' },
@@ -192,6 +243,14 @@ export default {
         { en: 'beautiful detailed', zh: '细节' },
         { en: 'colourful', zh: '丰富多彩' },
         { en: 'humiliation', zh: '羞耻的' },
+        { en: 'gorgeous', zh: '华丽的' },
+        { en: 'clean skin', zh: '干净的皮肤' },
+        { en: 'perfect skin', zh: '完美的皮肤' },
+        { en: 'perfect body', zh: '完美的身体' },
+        { en: 'sexy', zh: '性感的' },
+        { en: 'lewd', zh: 'yin乱' },
+        { en: 'thighhighs', zh: '大腿' },
+        { en: 'erotic', zh: '😍情' },
         { en: 'partially unbuttoned', zh: '解开部分扣子' },
         { en: '{{breasts out}}', zh: '露胸' },
         { en: '{{large breasts}}', zh: '大胸' },
@@ -202,47 +261,6 @@ export default {
         { en: 'shirt lift', zh: '提起衬衫' },
         { en: 'middle nipples', zh: '不大不小的乳头' },
         { en: 'leash', zh: '拴狗链' },
-      ],
-      adult_negative_prompts: [
-        { en: 'worst quality', zh: '最差的质量' },
-        { en: 'low quality', zh: '低质量' },
-        { en: 'normal quality', zh: '普通质量' },
-        { en: 'ugly', zh: '丑陋的' },
-        { en: 'bad anatomy', zh: '错误的人体构造' },
-        { en: 'bad hands', zh: '错误的手' },
-        { en: 'extra hands', zh: '多余的手' },
-        { en: 'broken hands', zh: '损坏的手' },
-        { en: 'more than two hands', zh: '两只手以上' },
-        { en: 'missing fingers', zh: '缺失的手指' },
-        { en: 'more than two legs', zh: '两条腿以上' },
-        { en: 'unclear eyes', zh: '不清楚的眼睛' },
-        { en: 'missing arms', zh: '缺失的手臂' },
-        { en: 'mutilated', zh: '残废' },
-        { en: 'extra limbs', zh: '额外的四肢' },
-        { en: 'extra legs', zh: '额外的腿' },
-        { en: 'cloned face', zh: '克隆的脸' },
-        { en: 'fused fingers', zh: '融合的手指' },
-        { en: 'extra digit', zh: '多余的数字' },
-        { en: 'fewer digits', zh: '更少的数字' },
-        { en: 'jpeg artifacts', zh: '人造图' },
-        { en: 'error', zh: '错误' },
-        { en: 'text', zh: '文字' },
-        { en: 'signature', zh: '签名' },
-        { en: 'username', zh: '用户名' },
-        { en: 'blurry', zh: '模糊不清的' },
-        { en: 'watermark', zh: '水印' },
-        { en: 'mirror image', zh: '镜像图片' },
-        { en: 'Vague', zh: '模糊不清的' },
-        { en: 'paintings', zh: '印刷品' },
-        { en: 'sketches', zh: '草图' },
-        { en: 'lowres', zh: '低分辨率' },
-        { en: '((monochrome))', zh: '黑白照' },
-        { en: '((grayscale))', zh: '灰度图' },
-        { en: 'skin spots', zh: '皮肤斑点' },
-        { en: 'skin blemishes', zh: '皮肤瑕疵' },
-        { en: 'age spot', zh: '老年斑' },
-        { en: 'bad feet', zh: '坏的脚' },
-        { en: 'cropped', zh: '裁剪' },
       ],
       setting: {
         en: true,
@@ -270,15 +288,11 @@ export default {
   },
   methods: {
     disposePrompts: function (prompts) {
-      return prompts.map(prompt => prompt.en).join(',')
+      return prompts.map(prompt => prompt.en).join(', ')
     },
     adultPrompt: function () {
       this.form.vprompts = Array.from(this.adult_prompts)
       this.form.prompts = this.disposePrompts(this.form.vprompts)
-    },
-    adultNegativePrompt: function () {
-      this.form.vnegative_prompts = Array.from(this.adult_negative_prompts)
-      this.form.negative_prompts = this.disposePrompts(this.form.vnegative_prompts)
     },
     cancelPrompts: function () {
       this.form.vprompts = []
@@ -287,10 +301,6 @@ export default {
     initPrompts: function () {
       this.form.vprompts = Array.from(this.prompts)
       this.form.prompts = this.disposePrompts(this.form.vprompts)
-    },
-    cancelNegativePrompts: function () {
-      this.form.vnegative_prompts = []
-      this.form.negative_prompts = ''
     },
     initNegativePrompts: function () {
       this.form.vnegative_prompts = Array.from(this.negative_prompts)

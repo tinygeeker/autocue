@@ -124,6 +124,11 @@ const prompts = [
         visible: false,
         range: 'adult',
         items: [
+            { en: 'looking at viewer', zh: '看着观众' },
+            { en: 'rolling eyes', zh: '翻白眼' },
+            { en: 'tongue out', zh: '伸出舌头' },
+            { en: 'drooling', zh: '流口水' },
+            { en: 'shock', zh: '休克' },
             { en: 'naughty face', zh: '下流的表情' },
             { en: 'endured face', zh: '忍耐的表情' },
             { en: 'blood on face', zh: '脸部有血' },

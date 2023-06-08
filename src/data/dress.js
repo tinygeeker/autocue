@@ -70,6 +70,8 @@ const prompts = [
         visible: false,
         range: 'adult',
         items: [
+            { en: 'lace trim', zh: '蕾丝装饰' },
+            { en: 'lace-trimmed legwear', zh: '蕾丝裤袜' },
             { en: 'open clothes', zh: '敞开的衬衫' },
             { en: 'victorian', zh: '褶边文胸' },
             { en: 'sexy lingerie', zh: '情趣内衣' },

@@ -30,6 +30,14 @@ const prompts = [
             { en: 'smoking', zh: '抽烟' },
             { en: 'hug', zh: '拥抱' },
         ]
+    },
+    {
+        name: '大人模式',
+        visible: false,
+        range: 'adult',
+        items: [
+            { en: 'bound wrists', zh: '捆绑手腕' },
+        ]
     }
 ];
 

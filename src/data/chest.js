@@ -16,6 +16,7 @@ const prompts = [
         visible: false,
         range: 'adult',
         items: [
+            { en: 'narrow waist', zh: '水蛇腰' },
             { en: 'hanging breasts', zh: '🐻晃来晃去' },
             { en: 'bouncing breasts', zh: '🐻弹来弹去' },
             { en: 'breasts out', zh: '露出🐻' },

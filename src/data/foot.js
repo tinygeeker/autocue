@@ -14,6 +14,8 @@ const prompts = [
         visible: true,
         range: 'all',
         items: [
+            { en: 'horse oil socks', zh: '马油袜' },
+            { en: 'gradient socks', zh: '渐变袜' },
             { en: 'bare legs', zh: '不穿袜子' },
             { en: 'garter straps', zh: '吊袜带' },
             { en: 'socks', zh: '袜子' },
@@ -72,9 +74,14 @@ const prompts = [
         visible: false,
         range: 'adult',
         items: [
+            { en: 'spread legs', zh: '腿分开' },
+            { en: 'pussy juice', zh: '流水' },
             { en: 'bound legs', zh: '绑腿' },
             { en: 'leg lock', zh: '锁腿' },
             { en: 'barefoot', zh: '裸脚' },
+            { en: 'pussy', zh: '阴部' },
+            { en: 'natural pubic hair', zh: 'X毛' },
+            { en: 'vaginal', zh: '分泌物' },
             { en: 'torn pantyhose', zh: '撕裂的连裤袜' }
         ]
     }
