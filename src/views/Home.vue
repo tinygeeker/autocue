@@ -108,6 +108,9 @@
           <el-tab-pane label="动作" name="action">
             <Action :setting="this.setting" :vprompts="this.form.vprompts" @selectPrompt="selectPrompt" />
           </el-tab-pane>
+          <el-tab-pane label="机甲" name="mecha">
+            <Mecha :setting="this.setting" :vprompts="this.form.vprompts" @selectPrompt="selectPrompt" />
+          </el-tab-pane>
         </el-tabs>
       </el-col>
     </el-row>
@@ -129,6 +132,7 @@ import Chest from '../components/Chest.vue'
 import Foot from '../components/Foot.vue'
 import Dress from '../components/Dress.vue'
 import Action from '../components/Action.vue'
+import Mecha from '../components/Mecha.vue'
 
 export default {
   name: 'Home',
@@ -143,7 +147,8 @@ export default {
     Chest,
     Foot,
     Dress,
-    Action
+    Action,
+    Mecha
   },
   data() {
     return {
@@ -250,17 +255,16 @@ export default {
         { en: 'sexy', zh: '性感的' },
         { en: 'lewd', zh: 'yin乱' },
         { en: 'thighhighs', zh: '大腿' },
-        { en: 'erotic', zh: '😍情' },
-        { en: 'partially unbuttoned', zh: '解开部分扣子' },
-        { en: '{{breasts out}}', zh: '露胸' },
-        { en: '{{large breasts}}', zh: '大胸' },
+        { en: 'erotic', zh: '涩情' },
         { en: 'no bra', zh: '不穿胸罩' },
+        { en: 'breasts out', zh: '露胸' },
+        { en: 'middle breasts', zh: '大小合适的胸' },
+        { en: 'middle nipples', zh: '大小合适的乳头' },
+        { en: 'partially unbuttoned', zh: '解开部分扣子' },
         { en: 'no panties', zh: '不穿短裤' },
         { en: 'undressing', zh: '脱裙子' },
         { en: 'skirt lift', zh: '提起裙子' },
         { en: 'shirt lift', zh: '提起衬衫' },
-        { en: 'middle nipples', zh: '不大不小的乳头' },
-        { en: 'leash', zh: '拴狗链' },
       ],
       setting: {
         en: true,
