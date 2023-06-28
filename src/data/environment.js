@@ -66,7 +66,7 @@ const prompts = [
             { en: 'in the bathtub', zh: '在浴缸' },
             { en: 'on the balcony', zh: '在阳台' },
             { en: 'at the dressing table', zh: '在化妆台' },
-            { en: 'all fours', zh: '趴在地上' },
+            { en: 'all fours', zh: '趴地上' },
         ]
     }
 ];

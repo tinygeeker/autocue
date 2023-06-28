@@ -93,8 +93,8 @@ const prompts = [
         visible: false,
         range: 'adult',
         items: [
-            { en: 'standing doggystyle sex', zh: '狗的爱爱' },
-            { en: 'POV from behind', zh: '后方第一视角' },
+            { en: 'standing doggystyle sex', zh: '狗式' },
+            { en: 'POV from behind', zh: '后方视角' },
             { en: 'vaginal insertion', zh: '深入交流' },
             { en: 'vaginal penetration from behind', zh: '从后面' },
             { en: 'no panties', zh: '无内裤' },
@@ -105,7 +105,7 @@ const prompts = [
             { en: 'clothes pull', zh: '拉衣领' },
             { en: 'open clothes', zh: '打开衣服' },
             { en: 'adjusting thighhigh', zh: '调整过膝袜' },
-            { en: 'ahegao', zh: '暴力行为' },
+            { en: 'ahegao', zh: '暴力' },
             { en: 'peeing', zh: '小便' }
         ]
     }

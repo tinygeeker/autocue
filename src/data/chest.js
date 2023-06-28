@@ -21,8 +21,8 @@ const prompts = [
             { en: 'bouncing breasts', zh: '🐻弹来弹去' },
             { en: 'breasts out', zh: '露出🐻' },
             { en: 'one breast out', zh: '露出一边' },
-            { en: 'mole on breast', zh: '🐻有痣' },
-            { en: 'between breasts', zh: '两头🐻之间' },
+            { en: 'mole on breast', zh: '胸部有痣' },
+            { en: 'between breasts', zh: '两🐻之间' },
             { en: 'symmetrical docking', zh: '🐻挤一起' },
         ]
     }

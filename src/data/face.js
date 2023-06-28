@@ -126,7 +126,7 @@ const prompts = [
         items: [
             { en: 'looking at viewer', zh: '看着观众' },
             { en: 'rolling eyes', zh: '翻白眼' },
-            { en: 'tongue out', zh: '伸出舌头' },
+            { en: 'tongue out', zh: '伸舌头' },
             { en: 'drooling', zh: '流口水' },
             { en: 'shock', zh: '休克' },
             { en: 'naughty face', zh: '下流的表情' },

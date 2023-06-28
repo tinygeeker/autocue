@@ -51,6 +51,7 @@ const prompts = [
             { en: 'striped pantyhose', zh: '竖条纹连裤袜' },
             { en: 'single leg pantyhose', zh: '单腿连裤袜' },
             { en: 'fishnet legwear', zh: '渔网袜' },
+            { en: 'torn pantyhose', zh: '撕裂的连裤袜' }
         ]
     },
     {
@@ -85,8 +86,7 @@ const prompts = [
             { en: 'pussy', zh: '私密部位' },
             { en: 'anal', zh: 'Ju花' },
             { en: 'natural pubic hair', zh: 'X毛' },
-            { en: 'vaginal', zh: '分泌物' },
-            { en: 'torn pantyhose', zh: '撕裂的连裤袜' }
+            { en: 'vaginal', zh: '分泌物' }
         ]
     }
 ];

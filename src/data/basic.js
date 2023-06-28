@@ -49,11 +49,11 @@ const prompts = [
         range: 'adult',
         items: [
             { en: 'surrounded, multiple others, exhibitionism, audience, background characters, crowd, public humiliation', zh: '露出' },
-            { en: 'partially unbuttoned', zh: '解开一部分扣子' },
-            { en: 'show foot', zh: '展示足' },
-            { en: 'pubic tattoo on underbelly', zh: '淫纹在小腹' },
+            { en: 'partially unbuttoned', zh: '解开部分扣子' },
+            { en: 'show foot', zh: '露腿' },
+            { en: 'pubic tattoo on underbelly', zh: '私密处纹身' },
             { en: 'spread pussy', zh: '掰开XX' },
-            { en: 'ass visible through thighs', zh: '透过大腿可见屁股' },
+            { en: 'ass visible through thighs', zh: '从大腿看臀部' },
         ]
     }
 ];
