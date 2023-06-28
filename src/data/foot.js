@@ -7,6 +7,7 @@ const prompts = [
             { en: 'bandaged leg', zh: '包扎腿' },
             { en: 'bandaid on leg', zh: '腿上的绷带' },
             { en: 'mechanical legs', zh: '机械腿' },
+            { en: 'bare legs', zh: '光腿' }
         ]
     },
     {
@@ -57,6 +58,8 @@ const prompts = [
         visible: true,
         range: 'all',
         items: [
+            { en: 'without shoes', zh: '不穿鞋' },
+            { en: 'stiletto heels', zh: '细高跟' },
             { en: 'shoes', zh: '鞋子' },
             { en: 'fashionable shoes', zh: '时尚的鞋子' },
             { en: 'boots', zh: '靴子' },
@@ -74,12 +77,13 @@ const prompts = [
         visible: false,
         range: 'adult',
         items: [
-            { en: 'spread legs', zh: '腿分开' },
+            { en: 'spreading legs', zh: '张开腿' },
             { en: 'pussy juice', zh: '流水' },
             { en: 'bound legs', zh: '绑腿' },
             { en: 'leg lock', zh: '锁腿' },
-            { en: 'barefoot', zh: '裸脚' },
-            { en: 'pussy', zh: '阴部' },
+            { en: 'barefoot', zh: '裸足' },
+            { en: 'pussy', zh: '私密部位' },
+            { en: 'anal', zh: 'Ju花' },
             { en: 'natural pubic hair', zh: 'X毛' },
             { en: 'vaginal', zh: '分泌物' },
             { en: 'torn pantyhose', zh: '撕裂的连裤袜' }
