@@ -7,7 +7,7 @@ module.exports = defineConfig({
     config
     .plugin('html')
     .tap(args => {
-      args[0].title = '极客飞兔AI标签生成器'
+      args[0].title = '极客飞兔AI标签提词器'
       return args
     })
   },
