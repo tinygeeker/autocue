@@ -14,7 +14,7 @@
 
 > 下载该库
 ```
-git clone https://github.com/tinygeeker/ai-prompt-generator.git
+git clone https://github.com/tinygeeker/autocue.git
 ```
 
 > 安装依赖
