@@ -8,7 +8,7 @@
 </p>
 
 ## 项目预览
-![项目预览](https://tinygeeker.github.io/static/imgs/autocue/preview.png)
+![项目预览](https://tinygeeker.github.io/static/imgs/autocue/000.png)
 
 ## 使用方法
 
