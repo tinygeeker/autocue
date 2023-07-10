@@ -8,7 +8,7 @@
 </p>
 
 ## 项目预览
-![项目预览](https://tinygeeker.github.io/assets/imgs/ai-prompt-generator.png)
+![项目预览](https://tinygeeker.github.io/static/imgs/autocue/preview.png)
 
 ## 使用方法
 
@@ -31,16 +31,16 @@ npm run tinygeeker
 
 如果你觉得项目有用，就请我喝杯奶茶吧。 :tropical_drink:
 
-![donate](https://tinygeeker.github.io/u/pay/zuhe.jpg)
+![donate](https://tinygeeker.github.io/static/imgs/my/pay/group.jpg)
 
 ## 浏览器支持情况
 
-| [<img src="https://tinygeeker.github.io/assets/svg/ie.svg" alt="IE / Edge" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://tinygeeker.github.io/assets/svg/firefox.svg" alt="Firefox" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://tinygeeker.github.io/assets/svg/chrome.svg" alt="Chrome" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://tinygeeker.github.io/assets/svg/safari.svg" alt="Safari" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Safari | [<img src="https://tinygeeker.github.io/assets/svg/sogou.svg" alt="Sogou" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Sogou | [<img src="https://tinygeeker.github.io/assets/svg/uc.svg" alt="UC" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>UC | [<img src="https://tinygeeker.github.io/assets/svg/360.svg" alt="360" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>360 |
-| --------- | --------- | --------- | --------- | --------- | --------- | --------- |
-| 所有版本 | 所有版本 | 所有版本 | 所有版本 | 所有版本 | 所有版本 | 所有版本 |
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari-ios/safari-ios_48x48.png" alt="iOS Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>iOS Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/samsung-internet/samsung-internet_48x48.png" alt="Samsung" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Samsung | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Opera | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png" alt="Electron" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Electron |
+| --------- | --------- | --------- | --------- | --------- | --------- | --------- | --------- |
+| IE11, Edge| last version| last version| last version| last version| last version| last version| last version
 
 ## License
 
-[MIT](https://github.com/tinygeeker/navigation-site/blob/main/LICENSE)
+[MIT](https://github.com/tinygeeker/autocue/blob/main/LICENSE)
 
 Copyright (c) 2021-present tinygeeker
