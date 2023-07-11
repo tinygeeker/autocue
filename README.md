@@ -31,7 +31,7 @@ npm run tinygeeker
 
 如果你觉得项目有用，就请我喝杯奶茶吧。 :tropical_drink:
 
-![donate](https://tinygeeker.github.io/static/imgs/my/pay/group.jpg)
+![donate](https://tinygeeker.github.io/my/pay/group.jpg)
 
 ## 浏览器支持情况
 
