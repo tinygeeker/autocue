@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <el-row type="flex" justify="center" align="middle">
-      <h2>AI 标签生成器</h2>
+      <h2>AI 标签生成器 <sub><el-link href="https://tinygeeker.gitee.io/menu/autocue/?from=https://tinygeeker.github.io/menu/autocue/" target="_blank" type="primary">国内版>></el-link></sub></h2>
     </el-row>
     <el-row type="flex" justify="center" :gutter="20">
       <el-col :span="12">
